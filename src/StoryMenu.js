@@ -11,7 +11,7 @@ class StoryMenu extends Component {
     return (
       <aside className="menu">
         <p className="menu-label">
-          <a class="delete"></a>&nbsp;Currently Listening To
+          <a className="delete"></a>&nbsp;Currently Listening To
         </p>
         <Story 
           audioId="1bsxKYH_o9QhFqB01QRbKoalD6ILjqTWT"

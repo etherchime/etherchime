@@ -1,0 +1,8 @@
+.profile-image {
+	border-radius: 50%;
+}
+
+.image.is-360x360 {
+    height: 360px;
+    width: 360px;
+}

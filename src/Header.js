@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import logo from './etherchime.gif';
 import './Header.css';
 
 class Header extends Component {
   render() {
     return (
-    	<section className="hero is-dark">
+    	<section className="hero has-bg-image has-background-black-ter">
 			<div className="hero-body">
 
-				<nav className="navbar is-fixed-top has-background-dark">
+				<nav className="navbar is-fixed-top has-background-black-ter">
 				  <div className="navbar-brand">
 				    <a className="navbar-item" href="https://bulma.io">
-				      <img src={logo} alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28" />
+				      {/*<img src={auroraImage} alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28" />*/}
 				    </a>
 				    <div className="navbar-burger burger" data-target="navbarExampleTransparentExample">
 				      <span></span>
@@ -84,11 +83,9 @@ class Header extends Component {
 				</nav>
 
 				<div className="container">
-					{/*<img src={logo} className="Header-logo" alt="logo" />*/}
 					<h1 className="title">
 						Etherchime
 					</h1>
-					<img src={logo} alt="Bulma: a modern CSS framework based on Flexbox" />
 					<h2 className="subtitle">
 						Music for Video Productions, Video Games, and Meditative Practices
 					</h2>
