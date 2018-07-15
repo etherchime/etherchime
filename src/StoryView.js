@@ -23,7 +23,7 @@ class StoryView extends Component {
       if (remainderNo === 0) {
         var storyRow = Stories.slice(index + 1 - columnsNo, index + 1);
         storyRows.push(storyRow);
-      } else if (Stories.length - (index + 1) < columnsNo) {
+      } else if (Stories.length - index < columnsNo) {
         var remainder = Stories.splice(index, Stories.length - index);
         storyRows.push(remainder);
       }
@@ -38,7 +38,7 @@ class StoryView extends Component {
     var stories =
       this.state.stories.map((storyRow, index) => {
         return (
-          <div className="columns is-mobile is-multiline is-centered">
+          <div className="columns is-mobile is-multiline">
             {storyRow.map(story => {
               return (
                 <div className="column is-one-third" key={index}>
