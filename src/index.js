@@ -5,18 +5,20 @@ import 'bulma/css/bulma.min.css';
 import './index.css';
 import Header from './Header';
 import Main from './Main';
+import StoryView from './StoryView';
 import About from './About';
 import Footer from './Footer';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(<Header />, document.getElementById("header"));
+ReactDOM.render(<Main />, document.getElementById("main"));
 ReactDOM.render(
-	<BrowserRouter>
+  <BrowserRouter>
     <Switch>
-      <Route exact path="/" component={Main} />
+      <Route exact path="/" component={StoryView} />
       <Route path="/about" component={About} />
     </Switch>
   </BrowserRouter>,
-  document.getElementById("main"));
+  document.getElementById("main-content"));
 ReactDOM.render(<Footer />, document.getElementById("footer"));
 registerServiceWorker();
