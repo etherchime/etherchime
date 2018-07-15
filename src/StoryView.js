@@ -45,6 +45,7 @@ class StoryView extends Component {
                   <Story 
                     audioId={story.audioId}
                     imageId={story.imageId}
+                    imageDescription={story.imageDescription}
                     title={story.title}
                     description={story.description}
                     />

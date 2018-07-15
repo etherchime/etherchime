@@ -4,57 +4,27 @@ import './Header.css';
 class Header extends Component {
   render() {
     return (
-		<nav className="navbar has-background-black-ter">
-		  <div className="navbar-brand">
-		    <a className="navbar-item" href="https://bulma.io">
-		      {/*<img src={auroraImage} alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28" />*/}
-		    </a>
-		    <div className="navbar-burger burger" data-target="navbarExampleTransparentExample">
-		      <span></span>
-		      <span></span>
-		      <span></span>
-		    </div>
-		  </div>
+		<nav className="navbar has-background-grey-darker">
+      <div className="navbar-brand">
+        <a className="navbar-item" href="https://bulma.io">
+          <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28" />
+        </a>
 
-		  <div id="navbarExampleTransparentExample" className="navbar-menu">
+        <a role="button" className="navbar-burger is-active" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+		  <div id="navbarExampleTransparentExample" className="navbar-end">
 		    <div className="navbar-start">
 		      <a className="navbar-item" href="/">
 		        Home
 		      </a>
-		      <a className="navbar-item" href="/music">
-		      	Music
-		      </a>
-		      <a className="navbar-item" href="/about">
-		      	About
-		      </a>
-		      <a className="navbar-item" href="/contact">
-		      	Contact
-		      </a>
-		    </div>
-
-		    <div className="navbar-end">
-		      <div className="navbar-item">
-		        <div className="field is-grouped">
-		          <p className="control">
-		            <a className="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="http://localhost:4000" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=http://localhost:4000&amp;via=jgthms">
-		              <span className="icon">
-		                <i className="fab fa-twitter"></i>
-		              </span>
-		              <span>
-		                Tweet
-		              </span>
-		            </a>
-		          </p>
-		          <p className="control">
-		            <a className="button is-primary" href="https://github.com/jgthms/bulma/releases/download/0.7.1/bulma-0.7.1.zip">
-		              <span className="icon">
-		                <i className="fas fa-download"></i>
-		              </span>
-		              <span>Download</span>
-		            </a>
-		          </p>
-		        </div>
-		      </div>
+		      <a className="navbar-item" href="/music">Music</a>
+		      <a className="navbar-item" href="/about">About</a>
+		      <a className="navbar-item" href="/contact">Contact</a>
 		    </div>
 		  </div>
 		</nav>

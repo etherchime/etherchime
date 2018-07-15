@@ -3,10 +3,10 @@ import './Story.css';
 
 class Story extends Component {
   render() {
-    var card = <div className="card">
+    var card = <div className="card has-background-white-ter">
         <div className="card-image">
-          <figure className="image is-4by3">
-            <img src={"https://drive.google.com/uc?export=view&id=" + this.props.imageId} alt="Placeholder image" />
+          <figure className="image is-16by9">
+            <img src={"https://drive.google.com/uc?export=view&id=" + this.props.imageId} alt={this.props.imageDescription} />
           </figure>
         </div>
         <div className="card-content">
@@ -31,19 +31,6 @@ class Story extends Component {
             <a className="button">Pause</a>
             <a className="button">Download</a>
           </div>
-
-          <footer className="card-footer">
-            <p className="card-footer-item">
-              <span>
-                View on <a href="https://twitter.com/codinghorror/status/506010907021828096">Twitter</a>
-              </span>
-            </p>
-            <p className="card-footer-item">
-              <span>
-                Share on <a href="#">Facebook</a>
-              </span>
-            </p>
-          </footer>
         </div>
       </div>;
     return card;

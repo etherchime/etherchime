@@ -9,3 +9,7 @@ body {
      -ms-flex-align: center;
         align-items: center;
 }
+
+.navbar-item, .navbar-link {
+  color: hsl(0, 0%, 96%);
+}

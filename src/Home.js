@@ -47,12 +47,12 @@ class Home extends Component {
 
     return (
       <section className="section columns is-vertically-centered" style={bgStyle}>
-        <div className="container column">
+        <div className="container column is-half">
           <h1 className="has-text-weight-normal is-size-3">
             <strong>Etherchime</strong> composes music for <strong>video productions</strong>, <strong>video games</strong>, and <strong>meditative practices</strong>.
           </h1>
         </div>
-        <div className="container column">
+        <div className="container column is-half">
           <div className='carousel carousel-animated carousel-animate-slide'>
             <div className='carousel-container'>
               {carouselItems}

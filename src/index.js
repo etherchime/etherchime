@@ -6,17 +6,18 @@ import 'bulma-carousel/dist/css/bulma-carousel.min.css'
 import 'bulma-carousel/dist/js/bulma-carousel.min.js'
 import 'font-awesome/css/font-awesome.min.css'; 
 import './index.css';
+import App from './App';
 import Header from './Header';
-import Main from './Main';
   import Home from './Home';
   import StoryView from './StoryView';
   import About from './About';
   import Contact from './Contact';
 import Footer from './Footer';
+import StoryMenu from './StoryMenu';
 import registerServiceWorker from './registerServiceWorker';
 
+ReactDOM.render(<App />, document.getElementById("app"));
 ReactDOM.render(<Header />, document.getElementById("header"));
-ReactDOM.render(<Main />, document.getElementById("main"));
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
@@ -25,6 +26,8 @@ ReactDOM.render(
       <Route path="/about" component={About} />
     </Switch>
   </BrowserRouter>,
-  document.getElementById("main-content"));
+  document.getElementById("main"));
+ReactDOM.render(<StoryMenu />, document.getElementById("menu"));
 ReactDOM.render(<Footer />, document.getElementById("footer"));
+
 registerServiceWorker();
