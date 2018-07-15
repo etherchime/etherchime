@@ -6,13 +6,12 @@ import StoryMenu from './StoryMenu';
 class Main extends Component {
   render() {
     return (
-      <section className="section columns">
-        <div id="main-content" className="column is-four-fifths">
-        </div>
-        <div className="column is-one-fifth">
+      <div className="columns">
+        <section id="main-content" className="section column is-four-fifths has-background-primary"></section>
+        <section className="column is-one-fifth">
           <StoryMenu />
-        </div>
-      </section>
+        </section>
+      </div>
     );
   }
 }

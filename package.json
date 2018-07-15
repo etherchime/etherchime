@@ -5,6 +5,8 @@
   "homepage": "https://etherchime.github.io",
   "dependencies": {
     "bulma": "^0.7.1",
+    "bulma-carousel": "^3.0.0",
+    "font-awesome": "^4.7.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-router": "^4.3.1",

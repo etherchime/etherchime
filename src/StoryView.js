@@ -41,7 +41,7 @@ class StoryView extends Component {
           <div className="columns is-mobile is-multiline is-centered">
             {storyRow.map(story => {
               return (
-                <div className="column is-narrow" key={index}>
+                <div className="column is-one-third" key={index}>
                   <Story 
                     audioId={story.audioId}
                     imageId={story.imageId}
