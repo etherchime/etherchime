@@ -4,7 +4,7 @@ import './Footer.css';
 class Footer extends Component {
   render() {
     return (
-	  <div class="content has-text-centered has-text-white-ter">
+	  <div className="content has-text-centered has-text-white-ter">
 	    <p>
 	      <strong>Etherchime</strong> by <a href="https://www.linkedin.com/in/bshewmake">Brandon Shewmake</a>. The source code is licensed&nbsp;
 	      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content

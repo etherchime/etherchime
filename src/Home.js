@@ -6,20 +6,18 @@ import Story from './Story';
 import Stories from './Stories.json';
 
 class Home extends Component {
-  constructor() {
-    super()
-    this.state = {
-      stories: []
-    }
+  constructor(props) {
+    super(props);
+    this.state = {};
   }
 
   componentWillMount()
   {
-    this.state.stories = Stories.filter(function(story, index) {
+    this.setState({ stories: Stories.filter(function(story, index) {
       if (!story.tags || story.tags.length === 0) return false;
 
       return story.tags.indexOf("featured") !== -1;
-    });
+    })});
   }
 
   componentDidMount()

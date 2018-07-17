@@ -8,7 +8,7 @@ class About extends Component {
       <section className="section columns">
       	<div className="container column is-half is-narrow">
   	  		<figure className="image is-360x360">
-    			  <img className="profile-image" src={profile} />
+    			  <img className="profile-image" src={profile} alt="" />
     			</figure>
           <h1 className="title">Brandon</h1>
         	<p>My name is Brandon, and I am fond of adventure.</p>

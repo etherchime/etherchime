@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
 import './Header.css';
 
+function toggleStoryMenu()
+{
+  var storyMenu = document.getElementById("storyMenu");
+  var mainContent = document.getElementById("mainContent");
+  mainContent.classList.toggle("is-four-fifths");
+  storyMenu.classList.toggle("is-hidden")
+}
+
+
 class Header extends Component {
   render() {
     return (
@@ -25,6 +34,7 @@ class Header extends Component {
 		      <a className="navbar-item" href="/music">Music</a>
 		      <a className="navbar-item" href="/about">About</a>
 		      <a className="navbar-item" href="/contact">Contact</a>
+          <button className="button" onClick={() => toggleStoryMenu()}>Toggle</button>
 		    </div>
 		  </div>
 		</nav>

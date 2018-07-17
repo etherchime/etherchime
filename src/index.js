@@ -7,6 +7,7 @@ import 'bulma-carousel/dist/js/bulma-carousel.min.js'
 import 'font-awesome/css/font-awesome.min.css'; 
 import './index.css';
 import App from './App';
+import AudioPlayer from './AudioPlayer';
 import Header from './Header';
   import Home from './Home';
   import StoryView from './StoryView';
@@ -17,6 +18,7 @@ import StoryMenu from './StoryMenu';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(<App />, document.getElementById("app"));
+ReactDOM.render(<AudioPlayer />, document.getElementById("audioRoot"));
 ReactDOM.render(<Header />, document.getElementById("header"));
 ReactDOM.render(
   <BrowserRouter>
@@ -24,6 +26,7 @@ ReactDOM.render(
       <Route exact path="/" component={Home} />
       <Route exact path="/music" component={StoryView} />
       <Route path="/about" component={About} />
+      <Route path="/contact" component = {Contact} />
     </Switch>
   </BrowserRouter>,
   document.getElementById("main"));
