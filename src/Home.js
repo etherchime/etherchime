@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Home.css';
 import bulmaCarousel from 'bulma-carousel';
 import bgImage from './0001.png';
+import AudioController from './AudioController';
 import Story from './Story';
 import Stories from './Stories.json';
 
@@ -28,17 +29,17 @@ class Home extends Component {
   render() {
     var bgStyle = {
       background: "url('" + bgImage + "') center center",
-      backgroundSize: "cover"
+      backgroundSize: "cover",
+      backgroundRepeat: "no-repeat",
+      backgroundAttachment: "fixed",
+      backgroundPosition: "center"
     }
+
     var carouselItems = this.state.stories.map((story, index) => {
       return (
         <div className='carousel-item has-background'>
-          <Story 
-            audioId={story.audioId}
-            imageId={story.imageId}
-            title={story.title}
-            description={story.description}
-            />
+          <img className="is-background" src={"https://drive.google.com/uc?export=view&id=" + story.imageId} alt={story.imageDescription} width="640" height="310" />
+          <div className="title">{story.title}<AudioController /></div>
         </div>
       );
     });
@@ -51,7 +52,7 @@ class Home extends Component {
           </h1>
         </div>
         <div className="container column is-half">
-          <div className='carousel carousel-animated carousel-animate-slide'>
+          <div className='carousel carousel-animated carousel-animate-fade'>
             <div className='carousel-container'>
               {carouselItems}
             </div>

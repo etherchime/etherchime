@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './StoryView.css';
+import bgImage from './0001.png';
 import Story from './Story';
 import Stories from './Stories.json';
 
@@ -35,10 +36,18 @@ class StoryView extends Component {
   }
 
   render() {
+    var bgStyle = {
+      background: "url('" + bgImage + "') center center",
+      backgroundSize: "cover",
+      backgroundRepeat: "no-repeat",
+      backgroundAttachment: "fixed",
+      backgroundPosition: "center" 
+    }
+
     var stories =
       this.state.stories.map((storyRow, index) => {
         return (
-          <div className="columns is-mobile is-multiline">
+          <div className="columns is-mobile is-multiline" style={bgStyle}>
             {storyRow.map(story => {
               return (
                 <div className="column is-one-third" key={index}>

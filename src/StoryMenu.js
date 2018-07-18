@@ -18,12 +18,6 @@ class StoryMenu extends Component {
           title="Sage of Summer"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio."
           />
-        <div>
-          <button onClick={() => AudioPlayer.play("1ahlcrwApJpLUXOM7FevR6tyZSOzC36ov")}>Play</button> 
-          <button>Pause</button> 
-          <button>Vol+</button> 
-          <button>Vol-</button> 
-        </div>
       </aside>
     );
   }
