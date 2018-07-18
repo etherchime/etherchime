@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Story.css';
+import AudioController from './AudioController'
 
 class Story extends Component {
   render() {
@@ -18,18 +19,7 @@ class Story extends Component {
           </div>
 
           <div className="content">
-            {/*<audio controls="controls">
-              <source src={"https://drive.google.com/uc?export=download&id=" + this.props.audioId} type="audio/wav" />
-              Your browser does not support the audio element.
-            </audio>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-            <a href="#">#css</a> <a href="#">#responsive</a>
-            <br />
-            <time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>*/}
-            <a className="button">Play</a>
-            <a className="button">Pause</a>
-            <a className="button">Download</a>
+            <AudioController />
           </div>
         </div>
       </div>;

@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import './StoryMenu.css';
 import Story from './Story'
+import AudioPlayer from './AudioPlayer'
 
 class StoryMenu extends Component {
   render()
@@ -18,7 +19,7 @@ class StoryMenu extends Component {
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio."
           />
         <div>
-          <button>Play</button> 
+          <button onClick={() => AudioPlayer.play("1ahlcrwApJpLUXOM7FevR6tyZSOzC36ov")}>Play</button> 
           <button>Pause</button> 
           <button>Vol+</button> 
           <button>Vol-</button> 

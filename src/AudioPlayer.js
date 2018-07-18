@@ -1,36 +1,30 @@
 import React, { Component } from 'react';
 import './AudioPlayer.css';
 
-class Audio extends Component {
-	constructor(props) {
-		super(props);
-		this.play = function(audioSource) {
-		  var audio = document.getElementById("audioPlayer");
+class AudioPlayer extends Component {
+	play(audioSource) {
+	  var audio = document.getElementById("audioPlayer");
 
-		  if (audioSource) {
-		  	audio.src = "https://drive.google.com/uc?export=download&id=" + audioSource;
-		  }
-		  
-		  audio.play();
-		}
+	  if (audioSource) {
+	  	audio.src = "https://drive.google.com/uc?export=download&id=" + audioSource;
+	  }
+	  
+	  audio.play();
+	}
 
-		this.pause = function()
-		{
-		  var audio = document.getElementById("audioPlayer");
-		  audio.pause();
-		}
+	pause() {
+	  var audio = document.getElementById("audioPlayer");
+	  audio.pause();
+	}
 
-		this.louden = function()
-		{
-		  var audio = document.getElementById("audioPlayer");
-		  audio.volume += 0.1
-		}
+	louden() {
+	  var audio = document.getElementById("audioPlayer");
+	  audio.volume += 0.1
+	}
 
-		this.soften = function()
-		{
-		  var audio = document.getElementById("audioPlayer");
-		  audio.volume -= 0.1
-		}
+	soften() {
+	  var audio = document.getElementById("audioPlayer");
+	  audio.volume -= 0.1
 	}
 
   render() {
@@ -40,4 +34,4 @@ class Audio extends Component {
   }
 }
 
-export default Audio;
+export default AudioPlayer;
