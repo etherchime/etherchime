@@ -1,36 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Switch, BrowserRouter, Route } from 'react-router-dom';
+import { Howler } from 'howler';
 import 'bulma/css/bulma.min.css';
 import 'bulma-carousel/dist/css/bulma-carousel.min.css'
 import 'bulma-carousel/dist/js/bulma-carousel.min.js'
 import 'font-awesome/css/font-awesome.min.css'; 
 import './index.css';
 import App from './App';
-import AudioPlayer from './AudioPlayer';
-import Header from './Header';
-  import Home from './Home';
-  import StoryView from './StoryView';
-  import About from './About';
-  import Contact from './Contact';
+import Nav from './Nav';
+import Home from './Home';
+import Stories from './Stories';
+import About from './About';
+import Contact from './Contact';
 import Footer from './Footer';
-import StoryMenu from './StoryMenu';
+import Aside from './Aside';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById("app"));
-ReactDOM.render(<AudioPlayer />, document.getElementById("audioRoot"));
-ReactDOM.render(<Header />, document.getElementById("header"));
+ReactDOM.render(<App />, document.getElementById("appRoot"));
+ReactDOM.render(<Nav />, document.getElementById("navRoot"));
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route exact path="/music" component={StoryView} />
+      <Route path="/music/:category?" component={Stories} />
       <Route path="/about" component={About} />
       <Route path="/contact" component = {Contact} />
     </Switch>
   </BrowserRouter>,
-  document.getElementById("main"));
-ReactDOM.render(<StoryMenu />, document.getElementById("menu"));
-ReactDOM.render(<Footer />, document.getElementById("footer"));
+  document.getElementById("mainRoot"));
+ReactDOM.render(<Footer />, document.getElementById("footerRoot"));
+ReactDOM.render(<Aside />, document.getElementById("asideRoot"));
 
 registerServiceWorker();

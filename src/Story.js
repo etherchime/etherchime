@@ -19,7 +19,7 @@ class Story extends Component {
           </div>
 
           <div className="content">
-            <AudioController />
+            <AudioController audioId={this.props.audioId} />
           </div>
         </div>
       </div>;

@@ -1,3 +1,4 @@
+import { Howl, Howler } from 'howler';
 import React, { Component } from 'react';
 import './AudioController.css';
 
@@ -6,8 +7,20 @@ class AudioController extends Component {
     super(props);
 
     this.state = {
+      audioId: props.audioId,
       isPlaying: false,
-      volumeLevel: 0.5
+      volumeLevel: 0.5,
+      audio: new Howl({
+        src: ["https://drive.google.com/uc?export=download&id=" + props.audioId],
+        format: ['wav'],
+        autoplay: false,
+        loop: true,
+        volume: 0.5,
+        onend: function() {
+          console.log('Finished!');
+        }
+      }),
+      playId: null
     };
 
     this.play = this.play.bind(this);
@@ -21,9 +34,34 @@ class AudioController extends Component {
   play(e) {
     e.preventDefault();
 
+    {/*var allPlayIcons = document.getElementsByClassName("fa-pause");
+    [].forEach.call(allPlayIcons, function (icon) { icon.classList.remove("fa-pause"); });
+    [].forEach.call(allPlayIcons, function (icon) { icon.classList.add("fa-play"); });*/}
+
     this.setState({
       isPlaying: true
     });
+
+    var thisPlayId = this.state.playId;
+    Howler._howls
+      .filter(function(howl, index) {
+        return howl._sounds[0]._id != thisPlayId;
+      }).forEach(howl => howl.stop());
+
+    
+
+
+    this.setState({
+      playId: this.state.audio.play()
+    });
+
+
+
+        <a className="button" onClick={this.state.isPlaying ? this.pause : this.play}>
+          <span className="icon is-small">
+            <i className={"fa " + (this.state.isPlaying ? "fa-pause" : "fa-play")}></i>
+          </span>
+        </a>
   }
 
   pause(e) {
@@ -32,6 +70,8 @@ class AudioController extends Component {
     this.setState({
       isPlaying: false
     });
+
+    this.state.audio.pause();
   }
 
   rewind(e) {
@@ -72,7 +112,7 @@ class AudioController extends Component {
             <i className="fa fa-fast-forward fa-flip-horizontal"></i>
           </span>
         </a>
-			  <a className="button" onClick={this.state.isPlaying ? this.pause : this.play}>
+			  <a className="button-play-pause button" onClick={this.state.isPlaying ? this.pause : this.play}>
 			    <span className="icon is-small">
 			      <i className={"fa " + (this.state.isPlaying ? "fa-pause" : "fa-play")}></i>
 			    </span>

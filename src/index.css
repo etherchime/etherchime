@@ -10,6 +10,19 @@ body {
         align-items: center;
 }
 
-.navbar-item, .navbar-link {
-  color: hsl(0, 0%, 96%);
+.button {
+  background: rgba(255,255,255,.7);
+  border-radius: 0;
+}
+
+.carousel .carousel-container .carousel-item .title {
+  background: none;
+}
+
+.carousel-nav-left, .carousel-nav-right {
+  border: 1px solid transparent;
+}
+
+.has-text-indented {
+  text-indent: 0.5em;
 }

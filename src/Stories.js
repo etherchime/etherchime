@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import './StoryView.css';
+import './Stories.css';
 import bgImage from './0001.png';
 import Story from './Story';
-import Stories from './Stories.json';
+import StoriesData from './StoriesData.json';
 
 function mod(n, m) {
   return ((n % m) + m) % m;
 }
 
-class StoryView extends Component {
+class Stories extends Component {
   constructor() {
     super()
     this.state = {
@@ -17,18 +17,27 @@ class StoryView extends Component {
   }
 
   componentDidMount() {
+    const { match: { params } } = this.props;
+
+    var storiesData = !params.category || params.category == "all" ? StoriesData :
+      StoriesData.filter(function(story, index) {
+        if (!story.tags || story.tags.length === 0) return false;
+
+        return story.tags.indexOf(params.category) !== -1;
+      });
+
     let storyRows = [];
     const columnsNo = 3;
-    Stories.forEach((story, index) => {
-      var remainderNo = mod(index + 1, columnsNo);
-      if (remainderNo === 0) {
-        var storyRow = Stories.slice(index + 1 - columnsNo, index + 1);
-        storyRows.push(storyRow);
-      } else if (Stories.length - index < columnsNo) {
-        var remainder = Stories.splice(index, Stories.length - index);
-        storyRows.push(remainder);
-      }
-    });
+    storiesData.forEach((story, index) => {
+        var remainderNo = mod(index + 1, columnsNo);
+        if (remainderNo === 0) {
+          var storyRow = storiesData.slice(index + 1 - columnsNo, index + 1);
+          storyRows.push(storyRow);
+        } else if (storiesData.length - index < columnsNo) {
+          var remainder = storiesData.splice(index, storiesData.length - index);
+          storyRows.push(remainder);
+        }
+      });
 
     this.setState({
       stories: storyRows
@@ -64,10 +73,13 @@ class StoryView extends Component {
           </div>
         );
       });
-    return <React.Fragment>
+
+    return (
+      <section className="section">
         {stories}
-      </React.Fragment>;
+      </section>
+    );
   }
 }
 
-export default StoryView;
+export default Stories;

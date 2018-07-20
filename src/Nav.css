@@ -12,3 +12,7 @@
   background: url(./0001.png); 
   background-size: cover;
 }
+
+.navbar-item {
+  color: hsl(0, 0%, 96%);
+}
