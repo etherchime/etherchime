@@ -7,7 +7,7 @@ class Aside extends Component {
   render()
   {
     return (
-      <aside className="aside menu">
+      <aside className="aside menu has-background-light">
         <br /><p className="menu-label has-text-centered">
           Find Music For
         </p>
@@ -21,15 +21,6 @@ class Aside extends Component {
           <li><a href="/music/summer"><i className="fa fa-sun-o" aria-hidden="true"></i>&nbsp; summer</a></li>
           <li><a href="/music/autumn"><i className="fa fa-moon-o" aria-hidden="true"></i>&nbsp; autumn</a></li>
         </ul>
-        <br /><p className="menu-label has-text-centered">
-          Now Listening To
-        </p>
-        <Story 
-          audioId="1bsxKYH_o9QhFqB01QRbKoalD6ILjqTWT"
-          imageId="1snjkU3Xc2tbVfzkiiWswyx6k3xJP3LNU"
-          title="Sakura Retro"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio."
-          />
       </aside>
     );
   }

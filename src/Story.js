@@ -4,11 +4,14 @@ import AudioController from './AudioController'
 
 class Story extends Component {
   render() {
-    var card = <div className="story card has-background-white-ter">
+    var card = <div className="story card has-background-grey-lighter">
         <div className="card-image">
           <figure className="image is-16by9">
             <img src={"https://drive.google.com/uc?export=view&id=" + this.props.imageId} alt={this.props.imageDescription} />
           </figure>
+          <div className="title is-grouped-centered content is-overlay">
+            <AudioController audioId={this.props.audioId} />
+          </div>
         </div>
         <div className="card-content">
           <div className="media">
@@ -16,10 +19,6 @@ class Story extends Component {
               <h2 className="title is-4">{this.props.title}</h2>
               <p className="subtitle is-6">{this.props.description}</p>
             </div>
-          </div>
-
-          <div className="content">
-            <AudioController audioId={this.props.audioId} />
           </div>
         </div>
       </div>;

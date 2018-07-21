@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Stories.css';
-import bgImage from './0001.png';
 import Story from './Story';
 import StoriesData from './StoriesData.json';
 
@@ -45,18 +44,10 @@ class Stories extends Component {
   }
 
   render() {
-    var bgStyle = {
-      background: "url('" + bgImage + "') center center",
-      backgroundSize: "cover",
-      backgroundRepeat: "no-repeat",
-      backgroundAttachment: "fixed",
-      backgroundPosition: "center" 
-    }
-
     var stories =
       this.state.stories.map((storyRow, index) => {
         return (
-          <div className="columns is-mobile is-multiline" style={bgStyle}>
+          <div className="columns is-mobile is-multiline">
             {storyRow.map(story => {
               return (
                 <div className="column is-one-third" key={index}>
@@ -75,9 +66,23 @@ class Stories extends Component {
       });
 
     return (
-      <section className="section">
-        {stories}
-      </section>
+      <React.Fragment>
+        <section class="hero has-background-grey-lighter">
+          <div class="hero-body">
+            <div class="container">
+              <h1 class="title">
+                Hero title
+              </h1>
+              <h2 class="subtitle">
+                Hero subtitle
+              </h2>
+            </div>
+          </div>
+        </section>
+        <section className="section">
+          {stories}
+        </section>
+      </React.Fragment>
     );
   }
 }

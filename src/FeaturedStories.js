@@ -30,7 +30,7 @@ class FeaturedStories extends Component {
       return (
         <div className='carousel-item has-background'>
           <img className="is-background" src={"https://drive.google.com/uc?export=view&id=" + story.imageId} alt={story.imageDescription} width="640" height="310" />
-          <div className="title is-grouped-centered">
+          <div className="title">
             <AudioController audioId={story.audioId} />
           </div>
           {/*<div className="title">{story.title}</div>*/}

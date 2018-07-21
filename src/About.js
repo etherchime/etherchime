@@ -1,20 +1,11 @@
 import React, { Component } from 'react';
 import './About.css';
-import bgImage from './0001.png';
 import profile from './profile-acadia.JPG';
 
 class About extends Component {
   render() {
-    var bgStyle = {
-      background: "url('" + bgImage + "') center center",
-      backgroundSize: "cover",
-      backgroundRepeat: "no-repeat",
-      backgroundAttachment: "fixed",
-      backgroundPosition: "center" 
-    }
-
     return (
-      <section className="section columns" style={bgStyle}>
+      <section className="section columns has-background-grey-lighter">
       	<div className="container column is-half is-narrow">
   	  		<figure className="image is-360x360">
     			  <img className="profile-image" src={profile} alt="" />

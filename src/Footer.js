@@ -4,13 +4,20 @@ import './Footer.css';
 class Footer extends Component {
   render() {
     return (
-	  <footer className="footer content has-text-centered has-text-white-ter">
-	    <p>
-	      <strong>Etherchime</strong> by <a href="https://www.linkedin.com/in/bshewmake">Brandon Shewmake</a>. The source code is licensed&nbsp;
-	      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-	      is licensed&nbsp;<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-	    </p>
-	  </footer>
+  	  <footer className="footer has-background-grey-lighter has-text-grey-darker content has-text-centered">
+  	    <div className="level is-mobile">
+            <div className="level-item">
+              <p>© 2018 Etherchime by <a href="https://www.linkedin.com/in/bshewmake" target="_blank">Brandon Shewmake</a></p>
+            </div>
+            <div className="level-item">
+              <p>
+                <a href="https://www.instagram.com/etherchime/" target="_blank">
+                  <i className="fa fa-instagram fa-lg"></i>
+                </a>
+              </p>
+          </div>
+        </div>
+  	  </footer>
     );
   }
 }

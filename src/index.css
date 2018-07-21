@@ -26,3 +26,17 @@ body {
 .has-text-indented {
   text-indent: 0.5em;
 }
+
+a, .navbar a, .footer a {
+  font-weight: 700;
+  color: hsl(0, 0%, 21%);
+}
+
+a:hover, a:active, .navbar a:hover, .navbar a:active, .footer a:hover, .footer a:active {
+  color: #FF6347;
+  background: transparent;
+}
+
+.button:hover, .button:active {
+  background-color: hsla(0, 0%, 96%, 100%);
+}
