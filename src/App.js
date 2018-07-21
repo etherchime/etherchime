@@ -15,15 +15,9 @@ class App extends Component {
     return (
       <div className="app columns is-gapless">
 	      <div id="appContainer" className="column" style={mainBg}>
-          <section class="hero">
-            <div class="hero-body">
-              <div class="container">
-                <h1 class="title">
-                  Hero title
-                </h1>
-                <h2 class="subtitle">
-                  Hero subtitle
-                </h2>
+          <section className="hero">
+            <div className="hero-body">
+              <div className="container">
               </div>
             </div>
           </section>

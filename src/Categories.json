@@ -1,0 +1,50 @@
+[
+  {
+    "key": "anything",
+    "name": "Anything",
+    "tagline": "for those who prefer to explore",
+    "icon": "fa-circle-o"
+  }
+  ,{
+    "key": "videos",
+    "name": "Video Productions",
+    "tagline": "for static experiences",
+    "icon": "fa-film"
+  }
+  ,{
+    "key": "games",
+    "name": "Video Games",
+    "tagline": "for interactive experiences",
+    "icon": "fa-gamepad"
+  }
+  ,{
+    "key": "meditation",
+    "name": "Meditative Practices",
+    "tagline": "for mindful times",
+    "icon": "fa-bell-o"
+  }
+  ,{
+    "key": "winter",
+    "name": "the Winter Season",
+    "tagline": "for chilly nights and morning coffee",
+    "icon": "fa-tree"
+  }
+  ,{
+    "key": "spring",
+    "name": "the Spring Season",
+    "tagline": "for wildlife and dew at dawn",
+    "icon": "fa-leaf"
+  }
+  ,{
+    "key": "summer",
+    "name": "the Summer Season",
+    "tagline": "for radiant days with watery reprieves",
+    "icon": "fa-sun-o"
+  }
+  ,{
+    "key": "autumn",
+    "name": "the Autumn Season",
+    "tagline": "for those who prefer to explore",
+    "icon": "fa-moon-o"
+  }
+]

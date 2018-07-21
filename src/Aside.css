@@ -1,3 +1,3 @@
-#menu > aside {
-	position: fixed;
+.menu-list li a:hover, .menu-list li a:active {
+  background-color: #FF6347;
 }

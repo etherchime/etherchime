@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './FeaturedStories.css';
 import bulmaCarousel from 'bulma-carousel';
 import AudioController from './AudioController';
-import Story from './Story';
 import StoriesData from './StoriesData.json';
 
 class FeaturedStories extends Component {

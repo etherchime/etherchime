@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Switch, BrowserRouter, Route } from 'react-router-dom';
-import { Howler } from 'howler';
 import 'bulma/css/bulma.min.css';
 import 'bulma-carousel/dist/css/bulma-carousel.min.css'
 import 'bulma-carousel/dist/js/bulma-carousel.min.js'

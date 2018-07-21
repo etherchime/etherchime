@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Stories.css';
 import Story from './Story';
 import StoriesData from './StoriesData.json';
+import CategoriesData from './Categories.json';
 
 function mod(n, m) {
   return ((n % m) + m) % m;
@@ -9,16 +10,28 @@ function mod(n, m) {
 
 class Stories extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
-        stories: []
-    }
+      stories: []
+    };
+  }
+
+  componentWillMount() {
+    const { match: { params } } = this.props;
+
+    var category = CategoriesData.filter(function(category, index) {
+      return category.key === (params.category || "anything");
+    })[0];
+
+    this.setState({
+      category: category
+    });
   }
 
   componentDidMount() {
     const { match: { params } } = this.props;
 
-    var storiesData = !params.category || params.category == "all" ? StoriesData :
+    var storiesData = !params.category || params.category === "anything" ? StoriesData :
       StoriesData.filter(function(story, index) {
         if (!story.tags || story.tags.length === 0) return false;
 
@@ -71,10 +84,10 @@ class Stories extends Component {
           <div class="hero-body">
             <div class="container">
               <h1 class="title">
-                Hero title
+                Music for {this.state.category.name}
               </h1>
               <h2 class="subtitle">
-                Hero subtitle
+                {this.state.category.tagline}
               </h2>
             </div>
           </div>

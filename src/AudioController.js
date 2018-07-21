@@ -34,10 +34,6 @@ class AudioController extends Component {
   play(e) {
     e.preventDefault();
 
-    {/*var allPlayIcons = document.getElementsByClassName("fa-pause");
-    [].forEach.call(allPlayIcons, function (icon) { icon.classList.remove("fa-pause"); });
-    [].forEach.call(allPlayIcons, function (icon) { icon.classList.add("fa-play"); });*/}
-
     this.setState({
       isPlaying: true
     });
@@ -45,23 +41,12 @@ class AudioController extends Component {
     var thisPlayId = this.state.playId;
     Howler._howls
       .filter(function(howl, index) {
-        return howl._sounds[0]._id != thisPlayId;
+        return howl._sounds[0]._id !== thisPlayId;
       }).forEach(howl => howl.stop());
-
-    
-
 
     this.setState({
       playId: this.state.audio.play()
     });
-
-
-
-        <a className="button" onClick={this.state.isPlaying ? this.pause : this.play}>
-          <span className="icon is-small">
-            <i className={"fa " + (this.state.isPlaying ? "fa-pause" : "fa-play")}></i>
-          </span>
-        </a>
   }
 
   pause(e) {
@@ -137,6 +122,11 @@ class AudioController extends Component {
           disabled={this.state.volumeLevel >= 1.0}>
           <span className="icon is-small">
             <i className="fa fa-volume-up"></i>
+          </span>
+        </a>
+        <a className="button" href={"https://drive.google.com/uc?export=download&id=" + this.state.audioId} download={this.state.title}>
+          <span className="icon is-small">
+            <i className="fa fa-download"></i>
           </span>
         </a>
 			</p>
