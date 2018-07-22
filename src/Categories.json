@@ -2,49 +2,49 @@
   {
     "key": "anything",
     "name": "Anything",
-    "tagline": "for those who prefer to explore",
+    "tagline": "Explore soundtracks for a variety of needs.",
     "icon": "fa-circle-o"
   }
   ,{
     "key": "videos",
     "name": "Video Productions",
-    "tagline": "for static experiences",
+    "tagline": "Elevate your visual content with thematic music.",
     "icon": "fa-film"
   }
   ,{
     "key": "games",
     "name": "Video Games",
-    "tagline": "for interactive experiences",
-    "icon": "fa-gamepad"
+    "tagline": "Imbue your interactive experiences with similar music.",
+    "icon": "fa-gamepad fa-rotate-45"
   }
   ,{
     "key": "meditation",
     "name": "Meditative Practices",
-    "tagline": "for mindful times",
+    "tagline": "Augment your mindfulness with subtle scores.",
     "icon": "fa-bell-o"
   }
   ,{
     "key": "winter",
     "name": "the Winter Season",
-    "tagline": "for chilly nights and morning coffee",
+    "tagline": "pairs with frigid stargazing and warm drinks",
     "icon": "fa-tree"
   }
   ,{
     "key": "spring",
     "name": "the Spring Season",
-    "tagline": "for wildlife and dew at dawn",
+    "tagline": "pairs with blooming foliage and dawn birdsongs",
     "icon": "fa-leaf"
   }
   ,{
     "key": "summer",
     "name": "the Summer Season",
-    "tagline": "for radiant days with watery reprieves",
+    "tagline": "pairs with radiant swimming and stormy afternoons",
     "icon": "fa-sun-o"
   }
   ,{
     "key": "autumn",
     "name": "the Autumn Season",
-    "tagline": "for those who prefer to explore",
+    "tagline": "pairs with windborn leaves and lunar evenings",
     "icon": "fa-moon-o"
   }
 ]
