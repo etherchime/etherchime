@@ -21,8 +21,8 @@ class Nav extends Component {
     return (
   		<nav className="nav navbar has-background-white-ter">
         <div className="navbar-brand">
-          <a className="navbar-item" href="https://bulma.io">
-            <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28" />
+          <a className="navbar-item" href="/">
+            <i class="fa fa-music" aria-hidden="true"></i>&emsp;Etherchime
           </a>
 
           <a role="button" className="navbar-burger is-active" aria-label="menu" aria-expanded="false">
