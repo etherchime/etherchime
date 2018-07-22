@@ -6,7 +6,7 @@ class About extends Component {
   render() {
     return (
       <section className="section columns has-background-grey-lighter">
-      	<div className="container column is-two-fifths is-narrow">
+      	<div className="container column is-two-fifths is-narrow has-text-justified">
           <div class="level">
             <div className="level-item">
       	  		<figure className="image is-360x360">
