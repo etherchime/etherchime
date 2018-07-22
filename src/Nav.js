@@ -9,8 +9,8 @@ function toggleAside()
   var asideIcon = asideToggle.getElementsByTagName("i")[0];
   appContainer.classList.toggle("is-four-fifths");
   asideRoot.classList.toggle("is-hidden");
-  asideIcon.classList.toggle("fa-angle-double-left");
-  asideIcon.classList.toggle("fa-angle-double-right");
+  asideIcon.classList.toggle("fa-expand");
+  asideIcon.classList.toggle("fa-compress");
 }
 
 
@@ -38,7 +38,7 @@ class Nav extends Component {
   		      <a className="navbar-item" href="/about">About</a>
   		      <a className="navbar-item" href="/contact">Contact</a>
             <a id="asideToggle" className="navbar-item" onClick={() => toggleAside()}>
-              Music&nbsp; &nbsp;<i className="fa fa-lg fa-angle-double-left"></i>
+              Music&nbsp; &nbsp;<i className="fa fa-expand"></i>
             </a>
   		    </div>
   		  </div>

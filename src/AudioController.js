@@ -11,16 +11,14 @@ class AudioController extends Component {
       isPlaying: false,
       volumeLevel: 0.5,
       audio: new Howl({
-        src: ["https://drive.google.com/uc?export=download&id=" + props.audioId],
+        src: [props.audioUrl],
         format: ['wav'],
         autoplay: false,
         loop: true,
-        volume: 0.5,
-        onend: function() {
-          console.log('Finished!');
-        }
+        volume: 0.5
       }),
-      playId: null
+      playId: null,
+      html5: true
     };
 
     this.play = this.play.bind(this);
@@ -124,7 +122,7 @@ class AudioController extends Component {
             <i className="fa fa-volume-up"></i>
           </span>
         </a>
-        <a className="button" href={"https://drive.google.com/uc?export=download&id=" + this.state.audioId} download={this.state.title}>
+        <a className="button" href={this.state.audioUrl} download={this.state.title}>
           <span className="icon is-small">
             <i className="fa fa-download"></i>
           </span>

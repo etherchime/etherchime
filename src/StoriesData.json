@@ -1,8 +1,8 @@
 [
 	{
 		"key": "SakuraRetro",
-		"audioId": "1bsxKYH_o9QhFqB01QRbKoalD6ILjqTWT",
-		"imageId": "1snjkU3Xc2tbVfzkiiWswyx6k3xJP3LNU",
+		"audioUrl": "https://drive.google.com/uc?export=download&id=1bsxKYH_o9QhFqB01QRbKoalD6ILjqTWT",
+		"imageUrl": "https://drive.google.com/uc?export=view&id=1snjkU3Xc2tbVfzkiiWswyx6k3xJP3LNU",
 		"imageDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 		"title": "Sakura Retro",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.",
@@ -11,8 +11,8 @@
 	}
 	,{
 		"key": "AscentToDreamAerie",
-		"audioId": "1RDYbM5Q40M76CrO54GVWmkVy59DjPxMa",
-		"imageId": "1n5VBS2g1L2dd_g8pbrI4VNag0oz9eFd3",
+		"audioUrl": "https://drive.google.com/uc?export=download&id=1RDYbM5Q40M76CrO54GVWmkVy59DjPxMa",
+		"imageUrl": "https://drive.google.com/uc?export=view&id=1n5VBS2g1L2dd_g8pbrI4VNag0oz9eFd3",
 		"imageDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 		"title": "Ascent to Dream Aerie",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.",
@@ -21,8 +21,8 @@
 	}
 	,{
 		"key": "TrekAtGrandfatherMountain",
-		"audioId": "1ALRX4eJUX7KglfjZfhVkyG6kc76TvJ_Z",
-		"imageId": "12Kl5ew1WMKz8IRNcRxtZNuiwp_f_eGZM",
+		"audioUrl": "https://drive.google.com/uc?export=download&id=1ALRX4eJUX7KglfjZfhVkyG6kc76TvJ_Z",
+		"imageUrl": "https://drive.google.com/uc?export=view&id=12Kl5ew1WMKz8IRNcRxtZNuiwp_f_eGZM",
 		"imageDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 		"title": "Trek at Grandfather Mountain",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.",
@@ -31,8 +31,8 @@
 	}
 	,{
 		"key": "SageOfWinter",
-		"audioId": "1csQtAj_vUTZKwWpeepJwrkxWMxezZmtR",
-		"imageId": "17ld4TfrR8oEDHHqeztMfBcUUFaSffqhR",
+		"audioUrl": "https://drive.google.com/uc?export=download&id=1csQtAj_vUTZKwWpeepJwrkxWMxezZmtR",
+		"imageUrl": "https://drive.google.com/uc?export=view&id=17ld4TfrR8oEDHHqeztMfBcUUFaSffqhR",
 		"imageDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 		"title": "Sage of Winter",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.",
@@ -41,8 +41,8 @@
 	}
 	,{
 		"key": "SageOfSpring",
-		"audioId": "1gH6B9vIsvXXizO2jwJYnOM3TdQMlM6TS",
-		"imageId": "14WLM8hUlOZqa4GpUKBekfknmfGwSw5ma",
+		"audioUrl": "https://drive.google.com/uc?export=download&id=1gH6B9vIsvXXizO2jwJYnOM3TdQMlM6TS",
+		"imageUrl": "https://drive.google.com/uc?export=view&id=14WLM8hUlOZqa4GpUKBekfknmfGwSw5ma",
 		"imageDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 		"title": "Sage of Spring",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.",
@@ -51,8 +51,8 @@
 	}
 	,{
 		"key": "SageOfSummer",
-		"audioId": "1ahlcrwApJpLUXOM7FevR6tyZSOzC36ov",
-		"imageId": "1dYeYZd7qYA72U1AZ6Kc6_nQAxLbVLvtK",
+		"audioUrl": "https://drive.google.com/uc?export=download&id=1ahlcrwApJpLUXOM7FevR6tyZSOzC36ov",
+		"imageUrl": "https://drive.google.com/uc?export=view&id=1dYeYZd7qYA72U1AZ6Kc6_nQAxLbVLvtK",
 		"imageDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 		"title": "Sage of Summer",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.",
@@ -61,8 +61,8 @@
 	}
 	,{
 		"key": "SageOfAutumn",
-		"audioId": "1c9m9DXfsIuCHMpic9zOz_0GtqNdzQhs7",
-		"imageId": "1d9Se-dLx1Bu77WaAKjmF9G0G6QYgfdZn",
+		"audioUrl": "1c9m9DXfsIuCHMpic9zOz_0GtqNdzQhs7",
+		"imageUrl": "https://drive.google.com/uc?export=view&id=1d9Se-dLx1Bu77WaAKjmF9G0G6QYgfdZn",
 		"imageDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 		"title": "Sage of Autumn",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.",

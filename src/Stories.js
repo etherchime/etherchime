@@ -65,8 +65,8 @@ class Stories extends Component {
               return (
                 <div className="column is-one-third" key={index}>
                   <Story 
-                    audioId={story.audioId}
-                    imageId={story.imageId}
+                    audioUrl={story.audioUrl}
+                    imageUrl={story.imageUrl}
                     imageDescription={story.imageDescription}
                     title={story.title}
                     description={story.description}

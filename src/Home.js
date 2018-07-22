@@ -17,13 +17,13 @@ class Home extends Component {
             <FeaturedStories />
           </div>
         </section>
-        <section class="hero">
-          <div class="hero-body">
-            <div class="container">
-              <h1 class="title">
+        <section className="hero">
+          <div className="hero-body">
+            <div className="container">
+              <h1 className="title">
                 Hero title
               </h1>
-              <h2 class="subtitle">
+              <h2 className="subtitle">
                 Hero subtitle
               </h2>
             </div>
@@ -39,13 +39,13 @@ class Home extends Component {
             </h1>
           </div>
         </section>
-        <section class="hero">
-          <div class="hero-body">
-            <div class="container">
-              <h1 class="title">
+        <section className="hero">
+          <div className="hero-body">
+            <div className="container">
+              <h1 className="title">
                 Hero title
               </h1>
-              <h2 class="subtitle">
+              <h2 className="subtitle">
                 Hero subtitle
               </h2>
             </div>

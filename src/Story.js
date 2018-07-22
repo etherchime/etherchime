@@ -7,10 +7,10 @@ class Story extends Component {
     var card = <div className="story card has-background-grey-lighter">
         <div className="card-image">
           <figure className="image is-16by9">
-            <img src={"https://drive.google.com/uc?export=view&id=" + this.props.imageId} alt={this.props.imageDescription} />
+            <img src={this.props.imageUrl} alt={this.props.imageDescription} />
           </figure>
           <div className="title is-grouped-centered content is-overlay">
-            <AudioController audioId={this.props.audioId} />
+            <AudioController audioUrl={this.props.audioUrl} />
           </div>
         </div>
         <div className="card-content">
