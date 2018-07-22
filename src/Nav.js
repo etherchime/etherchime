@@ -4,11 +4,13 @@ import './Nav.css';
 function toggleAside()
 {
   var asideToggle = document.getElementById("asideToggle");
-  var asideRoot = document.getElementById("asideRoot");
+  var asideRootTouch = document.getElementById("asideRootTouch");
+  var asideRootDesktop = document.getElementById("asideRootDesktop");
   var appContainer = document.getElementById("appContainer");
   var asideIcon = asideToggle.getElementsByTagName("i")[0];
   appContainer.classList.toggle("is-four-fifths");
-  asideRoot.classList.toggle("is-hidden");
+  asideRootTouch.classList.toggle("is-hidden");
+  asideRootDesktop.classList.toggle("is-hidden");
   asideIcon.classList.toggle("fa-expand");
   asideIcon.classList.toggle("fa-compress");
 }

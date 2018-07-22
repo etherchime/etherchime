@@ -29,6 +29,7 @@ ReactDOM.render(
   </BrowserRouter>,
   document.getElementById("mainRoot"));
 ReactDOM.render(<Footer />, document.getElementById("footerRoot"));
-ReactDOM.render(<Aside />, document.getElementById("asideRoot"));
+ReactDOM.render(<Aside />, document.getElementById("asideRootTouch"));
+ReactDOM.render(<Aside />, document.getElementById("asideRootDesktop"));
 
 registerServiceWorker();
