@@ -77,6 +77,13 @@ class Stories extends Component {
           </div>
         );
       });
+    var noStories =
+      <section className="section is-medium">
+        <blockquote className="content is-size-5 has-text-centered">
+          <strong>Music is the silence between the notes.</strong><br />
+          <span className="is-size-6">&mdash;Achille-Claude Debussy</span>
+        </blockquote>
+      </section>;
 
     return (
       <React.Fragment>
@@ -94,7 +101,7 @@ class Stories extends Component {
           </div>
         </section>
         <section className="section">
-          {stories}
+          {this.state.stories && this.state.stories.length > 0 ? stories : noStories}
         </section>
       </React.Fragment>
     );

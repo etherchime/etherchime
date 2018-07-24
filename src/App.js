@@ -23,12 +23,10 @@ class App extends Component {
           </section>
 	        <div id="navRoot"></div>
           <div id="asideRootTouch" className="is-hidden-desktop is-hidden column has-background-light"></div>
-          <section className="hero is-fullheight">
-            <main id="mainRoot"></main>
-          </section>
+          <main id="mainRoot"></main>
 	        <div id="footerRoot"></div>
 	      </div>
-	      <div id="asideRootDesktop" className="is-hidden-touch column is-hidden is-one-fifth has-background-light"></div>
+	      <div id="asideRootDesktop" className="is-hidden-touch column is-hidden is-one-fifth-desktop has-background-light"></div>
     	</div>
     );
   }

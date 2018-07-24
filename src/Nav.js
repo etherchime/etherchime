@@ -4,15 +4,19 @@ import './Nav.css';
 function toggleAside()
 {
   var asideToggle = document.getElementById("asideToggle");
-  var asideRootTouch = document.getElementById("asideRootTouch");
-  var asideRootDesktop = document.getElementById("asideRootDesktop");
   var appContainer = document.getElementById("appContainer");
+
   var asideIcon = asideToggle.getElementsByTagName("i")[0];
-  appContainer.classList.toggle("is-four-fifths");
-  asideRootTouch.classList.toggle("is-hidden");
-  asideRootDesktop.classList.toggle("is-hidden");
-  asideIcon.classList.toggle("fa-expand");
-  asideIcon.classList.toggle("fa-compress");
+    asideIcon.classList.toggle("fa-expand");
+    asideIcon.classList.toggle("fa-compress");
+
+  var asideRootTouch = document.getElementById("asideRootTouch");
+    asideRootTouch.classList.toggle("is-hidden");
+
+  var asideRootDesktop = document.getElementById("asideRootDesktop");
+    asideRootDesktop.classList.toggle("is-hidden");
+
+  appContainer.classList.toggle("is-four-fifths-desktop");
 }
 
 
@@ -22,7 +26,7 @@ class Nav extends Component {
   		<nav className="nav navbar has-background-white-ter">
         <div className="navbar-brand">
           <a className="navbar-item" href="/">
-            <i class="fa fa-music" aria-hidden="true"></i>&emsp;Etherchime
+            <i className="fa fa-music" aria-hidden="true"></i>&emsp;Etherchime
           </a>
 
           <a role="button" className="navbar-burger is-active" aria-label="menu" aria-expanded="false">
