@@ -1,50 +1,58 @@
 [
   {
-    "key": "anything",
-    "name": "Anything",
-    "tagline": "Explore soundtracks for a variety of needs.",
-    "icon": "fa-circle-o"
-  }
-  ,{
     "key": "videos",
     "name": "Video Productions",
-    "tagline": "Elevate your visual content with thematic music.",
+    "tagline": "Elevate your video's presentation with sweeping undertones.",
+    "features": [],
     "icon": "fa-film"
   }
   ,{
     "key": "games",
     "name": "Video Games",
-    "tagline": "Imbue your interactive experiences with similar music.",
+    "tagline": "Imbue your game's experiences with an adventurous soundtrack.",
+    "features": [],
     "icon": "fa-gamepad fa-rotate-45"
   }
   ,{
     "key": "meditation",
     "name": "Meditative Practices",
-    "tagline": "Augment your mindfulness with subtle scores.",
+    "tagline": "Augment your mindful state with a focused accompaniment.",
+    "features": [],
     "icon": "fa-bell-o"
   }
   ,{
     "key": "winter",
-    "name": "the Winter Season",
-    "tagline": "pairs with frigid stargazing and warm drinks",
+    "name": "Winter",
+    "tagline": "Pair music with ice-clear stargazing and warm drinks.",
+    "features": [],
     "icon": "fa-tree"
   }
   ,{
     "key": "spring",
-    "name": "the Spring Season",
-    "tagline": "pairs with blooming foliage and dawn birdsongs",
+    "name": "Spring",
+    "tagline": "Pair music with blooming foliage and dawn's birdsongs.",
+    "features": [],
     "icon": "fa-leaf"
   }
   ,{
     "key": "summer",
-    "name": "the Summer Season",
-    "tagline": "pairs with radiant swimming and stormy afternoons",
+    "name": "Summer",
+    "tagline": "Pair music with sunlit water and stormy afternoons.",
+    "features": [],
     "icon": "fa-sun-o"
   }
   ,{
     "key": "autumn",
-    "name": "the Autumn Season",
-    "tagline": "pairs with windborn leaves and lunar evenings",
+    "name": "Autumn",
+    "tagline": "Pair music with windborn leaves and moonlit evenings.",
+    "features": [],
     "icon": "fa-moon-o"
+  }
+  ,{
+    "key": "anything",
+    "name": "Anything",
+    "tagline": "Explore soundtracks for a variety of needs.",
+    "features": [],
+    "icon": "fa-circle-o"
   }
 ]

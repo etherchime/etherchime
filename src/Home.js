@@ -1,24 +1,56 @@
 import React, { Component } from 'react';
 import './Home.css';
 import FeaturedStories from './FeaturedStories';
-
+import CategoriesData from './Categories.json';
 
 class Home extends Component {
   render() {
+    var categories =
+      CategoriesData.map((category, index) => {
+        return (
+          <React.Fragment>
+            <section id={"musicFor-" + category.key} className="hero">
+              <div className="hero-body">
+                <div className="container">
+                  <h1 className="title">
+                    Music for {category.name}
+                  </h1>
+                </div>
+              </div>
+            </section>
+            <section className="section columns has-background-grey-lighter is-0 is-vertically-centered">
+              <div className="column is-one-third has-text-centered">
+                <i className={"fa fa-5x " + category.icon}></i>
+              </div>
+              <div className="column is-two-thirds">
+                <h1 className="has-text-weight-normal is-size-4">
+                  <p><a href={"/music/" + category.key}>{category.tagline}</a></p>
+                  <ul>
+                    <li className="has-circled-bullet">overworld music</li>
+                    <li className="has-circled-bullet">boss encounters</li>
+                    <li className="has-circled-bullet">character themes</li>
+                  </ul>
+                </h1>
+              </div>
+            </section>
+          </React.Fragment>
+        );
+      });
     return (
       <React.Fragment>
         <section className="section columns has-background-grey-lighter is-0 is-vertically-centered">
           <div className="column is-half">
-            <h1 className="has-text-weight-normal is-size-3">
+            <h1 className="has-text-weight-normal is-size-4">
               Music for <a href="#musicForVideos">video productions</a>, <a href="#musicForGames">video games</a>, and <a href="#musicForMeditation">meditative practices</a> - composed by Brandon Shewmake.
             </h1><br />
-            <p className="content is-size-3">Find free music for your project licensed under <a href="">License To-Be-Determined</a>, or request original compositions by <a href="/contact">contacting me</a>.</p>
+            <p className="content is-size-4">Find free music for your project licensed under <a href="">License To-Be-Determined</a>, or request original compositions by <a href="/contact">contacting me</a>.</p>
           </div>
           <div className="column is-half">
             <FeaturedStories />
           </div>
         </section>
-        <section id="musicForVideos" className="hero">
+        {categories}
+        {/*<section id="musicForVideos" className="hero">
           <div className="hero-body">
             <div className="container">
               <h1 className="title">
@@ -89,7 +121,7 @@ class Home extends Component {
               </ul>
             </h1>
           </div>
-        </section>
+        </section>*/}
       </React.Fragment>
     );
   }

@@ -5,7 +5,7 @@ import bgImage from './aurora.png';
 class App extends Component {
   render() {
     var mainBg = {
-      backgroundImage: "url('" + bgImage + "'), linear-gradient(to top, hsl(0, 0%, 14%), #66CDAA 45%, #FF7256 150%)",
+      backgroundImage: "url('" + bgImage + "'), linear-gradient(to top, #66CDAA 15%, #FF7256 120%)",
       backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
       backgroundAttachment: "fixed",

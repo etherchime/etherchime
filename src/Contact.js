@@ -4,9 +4,12 @@ import './Contact.css';
 class Contact extends Component {
   render() {
     return (
-      <section className="section columns has-background-grey-lighter">
+      <section className="section is-medium columns has-background-grey-lighter">
         <div className="container column is-two-fifths is-narrow">
-          <form method="post" action="contactengine.php" id="contactForm">
+          <p className="content is-size-4">
+            All compositions featured on this website are free-to-use under <a href="">this license</a>, but I would be glad to compose music specifically for your project. For inquiries about my composition services and anything else, please reach me on <a href="https://www.instagram.com/etherchime/" target="_blank" rel="noopener noreferrer">Instagram</a> or via <a href="mailto:etherchime@gmail.com">etherchime@gmail.com</a>.
+          </p>
+          {/*<form method="post" action="/contactengine.php" id="contactForm">
             <div className="field">
               <label className="label">Full Name:</label>
               <div className="control">
@@ -42,7 +45,7 @@ class Contact extends Component {
                 <button className="button is-link">Submit</button>
               </div>
             </div>
-          </form>
+          </form>*/}
         </div>
       </section>
     );

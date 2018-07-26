@@ -23,8 +23,8 @@ class AudioController extends Component {
 
     this.play = this.play.bind(this);
     this.pause = this.pause.bind(this);
-    this.rewind = this.rewind.bind(this);
-    this.fastForward = this.fastForward.bind(this);
+    //this.rewind = this.rewind.bind(this);
+    //this.fastForward = this.fastForward.bind(this);
     this.soften = this.soften.bind(this);
     this.louden = this.louden.bind(this);
   }
@@ -57,44 +57,50 @@ class AudioController extends Component {
     this.state.audio.pause();
   }
 
-  rewind(e) {
+  /*rewind(e) {
     e.preventDefault();
     console.log('The link was clicked.');
-  }
+  }*/
 
-  fastForward(e) {
+  /*fastForward(e) {
     e.preventDefault();
     console.log('The link was clicked.');
-  }
+  }*/
 
   soften(e) {
     e.preventDefault();
     
-    if (this.state.volumeLevel <= 0.0) return;
+    if (this.state.audio.volume <= 0.0) return;
 
-    this.setState((prevState) => {
+    var newVolume = (Howler.volume() * 10 - 1) / 10;
+    Howler.volume(newVolume);
+    //this.state.audio.volume = (this.state.audio.volume * 10 - 1) / 10;
+    /*this.setState((prevState) => {
       return { volumeLevel: (prevState.volumeLevel * 10 - 1) / 10 }
-    });
+    });*/
   }
 
   louden(e) {
     e.preventDefault();
     
-    if (this.state.volumeLevel >= 1.0) return;
+    if (this.state.audio.volume >= 1.0) return;
 
-    this.setState((prevState) => {
+    var newVolume = (Howler.volume() * 10 + 1) / 10;
+    Howler.volume(newVolume);
+    //this.state.audio.volume = (this.state.audio.volume * 10 + 1) / 10;
+    /*this.setState((prevState) => {
       return { volumeLevel: (prevState.volumeLevel * 10 + 1) / 10 }
-    });
+    });*/
   }
 
 	render() {
 		return (
 			<p className="audio-controller buttons is-centered">
-        <a className="button" onClick={this.rewind}>
+        {/*<a className="button" onClick={this.rewind}>
           <span className="icon is-small">
             <i className="fa fa-fast-forward fa-flip-horizontal"></i>
           </span>
-        </a>
+        </a>*/}
 			  <a className="button-play-pause button" onClick={this.state.isPlaying ? this.pause : this.play}>
 			    <span className="icon is-small">
 			      <i className={"fa " + (this.state.isPlaying ? "fa-pause" : "fa-play")}></i>
@@ -105,11 +111,11 @@ class AudioController extends Component {
 			      <i className="fa fa-pause"></i>
 			    </span>
 			  </a>	  
-			  <a className="button" onClick={this.fastForward}>
+			  {/*<a className="button" onClick={this.fastForward}>
 			    <span className="icon is-small">
 			      <i className="fa fa-fast-forward"></i>
 			    </span>
-			  </a>
+			  </a>*/}
         <a className="button" onClick={this.soften} 
           disabled={this.state.volumeLevel <= 0.0}>
           <span className="icon is-small">
