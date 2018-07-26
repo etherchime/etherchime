@@ -3,10 +3,42 @@ import './Home.css';
 import FeaturedStories from './FeaturedStories';
 import CategoriesData from './Categories.json';
 
+function toggleAside()
+{
+  var asideToggle = document.getElementById("asideToggle");
+  var appContainer = document.getElementById("appContainer");
+
+  var asideIcon = asideToggle.getElementsByTagName("i")[0];
+    asideIcon.classList.toggle("fa-expand");
+    asideIcon.classList.toggle("fa-compress");
+
+  var asideRootTouch = document.getElementById("asideRootTouch");
+    asideRootTouch.classList.toggle("is-hidden");
+
+  var asideRootDesktop = document.getElementById("asideRootDesktop");
+    asideRootDesktop.classList.toggle("is-hidden");
+
+  appContainer.classList.toggle("is-four-fifths-desktop");
+}
+
 class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  componentWillMount()
+  {
+    this.setState({ categories: CategoriesData.filter(function(category, index) {
+      if (!category.tags || category.tags.length === 0) return false;
+
+      return category.tags.indexOf("featured") !== -1;
+    })});
+  }
+
   render() {
     var categories =
-      CategoriesData.map((category, index) => {
+      this.state.categories.map((category, index) => {
         return (
           <React.Fragment>
             <section id={"musicFor-" + category.key} className="hero">
@@ -18,7 +50,7 @@ class Home extends Component {
                 </div>
               </div>
             </section>
-            <section className="section columns has-background-grey-lighter is-0 is-vertically-centered">
+            <section className="section is-medium columns has-background-grey-lighter is-0 is-vertically-centered">
               <div className="column is-one-third has-text-centered">
                 <i className={"fa fa-5x " + category.icon}></i>
               </div>
@@ -26,9 +58,9 @@ class Home extends Component {
                 <h1 className="has-text-weight-normal is-size-4">
                   <p><a href={"/music/" + category.key}>{category.tagline}</a></p>
                   <ul>
-                    <li className="has-circled-bullet">overworld music</li>
-                    <li className="has-circled-bullet">boss encounters</li>
-                    <li className="has-circled-bullet">character themes</li>
+                    {category.features.map((feature, index) => {
+                      return <li className="has-circled-bullet">{feature}</li>;
+                    })}
                   </ul>
                 </h1>
               </div>
@@ -38,10 +70,10 @@ class Home extends Component {
       });
     return (
       <React.Fragment>
-        <section className="section columns has-background-grey-lighter is-0 is-vertically-centered">
+        <section className="section is-medium columns has-background-grey-lighter is-0 is-vertically-centered">
           <div className="column is-half">
             <h1 className="has-text-weight-normal is-size-4">
-              Music for <a href="#musicForVideos">video productions</a>, <a href="#musicForGames">video games</a>, and <a href="#musicForMeditation">meditative practices</a> - composed by Brandon Shewmake.
+              Music for <a href="#musicFor-games">video games</a>, <a href="#musicFor-videos">video productions</a>, and <a href="#musicFor-meditation">meditative practices</a> - composed by Brandon Shewmake.
             </h1><br />
             <p className="content is-size-4">Find free music for your project licensed under <a href="">License To-Be-Determined</a>, or request original compositions by <a href="/contact">contacting me</a>.</p>
           </div>
@@ -50,78 +82,13 @@ class Home extends Component {
           </div>
         </section>
         {categories}
-        {/*<section id="musicForVideos" className="hero">
-          <div className="hero-body">
-            <div className="container">
-              <h1 className="title">
-                Music for Video Productions
-              </h1>
-            </div>
-          </div>
-        </section>
         <section className="section columns has-background-grey-lighter is-0 is-vertically-centered">
-          <div className="column is-one-third has-text-centered">
-            <i className="fa fa-5x fa-film"></i>
-          </div>
-          <div className="column is-two-thirds">
+          <div className="column has-text-centered">
             <h1 className="has-text-weight-normal is-size-4">
-              <p>Elevate your <a href="/music/videos">video productions</a> with instrumental music.</p>
-              <ul>
-                <li className="has-circled-bullet">nature documentaries</li>
-                <li className="has-circled-bullet">outdoor recreation documentaries</li>
-                <li className="has-circled-bullet">adventure films</li>
-              </ul>
+              <p><a onClick={() => toggleAside()}>Find music for your project.</a></p>
             </h1>
           </div>
         </section>
-        <section id="musicForGames" className="hero">
-          <div className="hero-body">
-            <div className="container">
-              <h1 className="title">
-                Music for Video Games
-              </h1>
-            </div>
-          </div>
-        </section>
-        <section className="section columns has-background-grey-lighter is-0 is-vertically-centered">
-          <div className="column is-one-third has-text-centered">
-            <i className="fa fa-5x fa-gamepad"></i>
-          </div>
-          <div className="column is-two-thirds">
-            <h1 className="has-text-weight-normal is-size-4">
-              <p>Imbue your <a href="/music/games">video games</a> with instrumental music.</p>
-              <ul>
-                <li className="has-circled-bullet">overworld music</li>
-                <li className="has-circled-bullet">boss encounters</li>
-                <li className="has-circled-bullet">character themes</li>
-              </ul>
-            </h1>
-          </div>
-        </section>
-        <section id="musicForMeditation" className="hero">
-          <div className="hero-body">
-            <div className="container">
-              <h1 className="title">
-                Music for Meditative Practices
-              </h1>
-            </div>
-          </div>
-        </section>
-        <section className="section columns has-background-grey-lighter is-0 is-vertically-centered">
-          <div className="column is-one-third has-text-centered">
-            <i className="fa fa-5x fa-bell-o"></i>
-          </div>
-          <div className="column is-two-thirds">
-            <h1 className="has-text-weight-normal is-size-4">
-              <p>Augment your <a href="/music/meditation">meditative practices</a> with instrumental music.</p>
-              <ul>
-                <li className="has-circled-bullet">serene ambience</li>
-                <li className="has-circled-bullet">guiding themes</li>
-                <li className="has-circled-bullet">emotional soundscapes</li>
-              </ul>
-            </h1>
-          </div>
-        </section>*/}
       </React.Fragment>
     );
   }

@@ -1,3 +1,7 @@
 .menu-list li a:hover, .menu-list li a:active {
   background-color: #FF6347;
 }
+
+.aside {
+  position: fixed;
+}

@@ -5,7 +5,7 @@ import bgImage from './aurora.png';
 class App extends Component {
   render() {
     var mainBg = {
-      backgroundImage: "url('" + bgImage + "'), linear-gradient(to top, #66CDAA 15%, #FF7256 120%)",
+      backgroundImage: "url('" + bgImage + "'), linear-gradient(to top, #1F618D 15%, #FF6347 135%)",
       backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
       backgroundAttachment: "fixed",
@@ -15,12 +15,6 @@ class App extends Component {
     return (
       <div className="app columns is-gapless">
 	      <div id="appContainer" className="column" style={mainBg}>
-          <section className="hero">
-            <div className="hero-body">
-              <div className="container">
-              </div>
-            </div>
-          </section>
 	        <div id="navRoot"></div>
           <div id="asideRootTouch" className="is-hidden-desktop is-hidden column has-background-light"></div>
           <main id="mainRoot"></main>

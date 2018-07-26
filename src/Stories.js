@@ -3,6 +3,7 @@ import './Stories.css';
 import Story from './Story';
 import StoriesData from './StoriesData.json';
 import CategoriesData from './Categories.json';
+import queryString from 'query-string';
 
 function mod(n, m) {
   return ((n % m) + m) % m;
@@ -30,12 +31,23 @@ class Stories extends Component {
 
   componentDidMount() {
     const { match: { params } } = this.props;
+    const queryParams = queryString.parse(this.props.location.search);
 
     var storiesData = !params.category || params.category === "anything" ? StoriesData :
       StoriesData.filter(function(story, index) {
         if (!story.tags || story.tags.length === 0) return false;
 
         return story.tags.indexOf(params.category) !== -1;
+      });
+
+    storiesData = 
+      !queryParams.story || 
+      queryParams.story === null || 
+      queryParams.story.match(/^ *$/) !== null ? storiesData :
+      storiesData.filter(function(story, index) {
+        if (!story.key || story.key === null || story.key.match(/^ *$/) !== null) return false;
+
+        return story.key.toUpperCase() === queryParams.story.toUpperCase();
       });
 
     let storyRows = [];

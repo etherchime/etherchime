@@ -4,7 +4,7 @@ import './Contact.css';
 class Contact extends Component {
   render() {
     return (
-      <section className="section is-medium columns has-background-grey-lighter">
+      <section className="section columns is-medium has-background-grey-lighter">
         <div className="container column is-two-fifths is-narrow">
           <p className="content is-size-4">
             All compositions featured on this website are free-to-use under <a href="">this license</a>, but I would be glad to compose music specifically for your project. For inquiries about my composition services and anything else, please reach me on <a href="https://www.instagram.com/etherchime/" target="_blank" rel="noopener noreferrer">Instagram</a> or via <a href="mailto:etherchime@gmail.com">etherchime@gmail.com</a>.

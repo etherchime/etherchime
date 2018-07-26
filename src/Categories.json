@@ -1,58 +1,66 @@
 [
   {
-    "key": "videos",
-    "name": "Video Productions",
-    "tagline": "Elevate your video's presentation with sweeping undertones.",
-    "features": [],
-    "icon": "fa-film"
-  }
-  ,{
     "key": "games",
     "name": "Video Games",
-    "tagline": "Imbue your game's experiences with an adventurous soundtrack.",
-    "features": [],
-    "icon": "fa-gamepad fa-rotate-45"
+    "tagline": "Craft your game's experiences with an adventurous score.",
+    "features": ["overworld music", "character & boss themes", "melodic ambience"],
+    "icon": "fa-gamepad fa-rotate-45",
+    "tags": ["featured"]
+  }
+  ,{
+    "key": "videos",
+    "name": "Video Productions",
+    "tagline": "Augment your video's presentation with an instrumental soundtrack.",
+    "features": ["nature-inspired scores", "rustic melodies", "overarching themes"],
+    "icon": "fa-film",
+    "tags": ["featured"]
   }
   ,{
     "key": "meditation",
     "name": "Meditative Practices",
-    "tagline": "Augment your mindful state with a focused accompaniment.",
-    "features": [],
-    "icon": "fa-bell-o"
-  }
-  ,{
-    "key": "winter",
-    "name": "Winter",
-    "tagline": "Pair music with ice-clear stargazing and warm drinks.",
-    "features": [],
-    "icon": "fa-tree"
-  }
-  ,{
-    "key": "spring",
-    "name": "Spring",
-    "tagline": "Pair music with blooming foliage and dawn's birdsongs.",
-    "features": [],
-    "icon": "fa-leaf"
-  }
-  ,{
-    "key": "summer",
-    "name": "Summer",
-    "tagline": "Pair music with sunlit water and stormy afternoons.",
-    "features": [],
-    "icon": "fa-sun-o"
-  }
-  ,{
-    "key": "autumn",
-    "name": "Autumn",
-    "tagline": "Pair music with windborn leaves and moonlit evenings.",
-    "features": [],
-    "icon": "fa-moon-o"
+    "tagline": "Elevate your mindfulness with a focused accompaniment.",
+    "features": ["rejuvenating tracks", "ambient soundscapes", "guiding melodies"],
+    "icon": "fa-bell-o",
+    "tags": ["featured"]
   }
   ,{
     "key": "anything",
     "name": "Anything",
     "tagline": "Explore soundtracks for a variety of needs.",
     "features": [],
-    "icon": "fa-circle-o"
+    "icon": "fa-circle-o",
+    "tags": []
+  }
+  ,{
+    "key": "winter",
+    "name": "Winter",
+    "tagline": "Pair music with ice-clear stargazing and warm drinks.",
+    "features": [],
+    "icon": "fa-tree",
+    "tags": []
+  }
+  ,{
+    "key": "spring",
+    "name": "Spring",
+    "tagline": "Pair music with blooming foliage and dawn's birdsongs.",
+    "features": [],
+    "icon": "fa-leaf",
+    "tags": []
+  }
+  ,{
+    "key": "summer",
+    "name": "Summer",
+    "tagline": "Pair music with sunlit water and stormy afternoons.",
+    "features": [],
+    "icon": "fa-sun-o",
+    "tags": []
+  }
+  ,{
+    "key": "autumn",
+    "name": "Autumn",
+    "tagline": "Pair music with windborn leaves and moonlit evenings.",
+    "features": [],
+    "icon": "fa-moon-o",
+    "tags": []
   }
 ]
