@@ -15,3 +15,11 @@
   color: #363636;
   padding: 0.75em;
 }
+
+.carousel-item {
+  visibility: hidden;
+}
+
+.carousel-item.is-active {
+  visibility: visible;
+}

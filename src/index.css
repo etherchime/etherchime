@@ -54,3 +54,5 @@ a:hover, a:active, .navbar a:hover, .navbar a:active, .footer a:hover, .footer a
     position: fixed;
   }
 }
+
+[aria-hidden="true"] { visibility: hidden; }

@@ -82,6 +82,7 @@ class Stories extends Component {
               return (
                 <div className="column is-one-third" key={index}>
                   <Story 
+                    alias={story.key}
                     audioUrls={story.audioUrls}
                     imageUrl={story.imageUrl}
                     imageDescription={story.imageDescription}
@@ -111,9 +112,9 @@ class Stories extends Component {
               <h1 className="title">
                 Music for {this.state.category.name}
               </h1>
-              <h2 className="subtitle">
+              <p className="subtitle">
                 {this.state.category.tagline}
-              </h2>
+              </p>
             </div>
           </div>
         </section>

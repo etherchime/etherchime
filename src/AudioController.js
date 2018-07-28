@@ -101,12 +101,12 @@ class AudioController extends Component {
             <i className="fa fa-fast-forward fa-flip-horizontal"></i>
           </span>
         </a>*/}
-			  <a className="button-play-pause button" onClick={this.state.isPlaying ? this.pause : this.play}>
+			  <a className="button-play-pause button" tabindex="0" onClick={this.state.isPlaying ? this.pause : this.play}>
 			    <span className="icon is-small">
 			      <i className={"fa " + (this.state.isPlaying ? "fa-pause" : "fa-play")}></i>
 			    </span>
 			  </a>
-			  <a className="button is-hidden" onClick={this.pause}>
+			  <a className="button is-hidden" tabindex="0" onClick={this.pause}>
 			    <span className="icon is-small">
 			      <i className="fa fa-pause"></i>
 			    </span>
@@ -116,19 +116,19 @@ class AudioController extends Component {
 			      <i className="fa fa-fast-forward"></i>
 			    </span>
 			  </a>*/}
-        <a className="button" onClick={this.soften} 
+        <a className="button" tabindex="0" onClick={this.soften} 
           disabled={this.state.volumeLevel <= 0.0}>
           <span className="icon is-small">
             <i className="fa fa-volume-down"></i>
           </span>
         </a>
-        <a className="button" onClick={this.louden}
+        <a className="button" tabindex="0" onClick={this.louden}
           disabled={this.state.volumeLevel >= 1.0}>
           <span className="icon is-small">
             <i className="fa fa-volume-up"></i>
           </span>
         </a>
-        <a className="button" href={this.state.audioUrls[0]} download={this.state.title}>
+        <a className="button" tabindex="0" href={this.state.audioUrls[0]} download={this.state.title}>
           <span className="icon is-small">
             <i className="fa fa-download"></i>
           </span>

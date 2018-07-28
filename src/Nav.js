@@ -25,25 +25,19 @@ class Nav extends Component {
     return (
   		<nav className="nav navbar has-background-white-ter">
         <div className="navbar-brand">
-          <a className="navbar-item" href="/">
-            <i className="fa fa-music" aria-hidden="true"></i>&emsp;Etherchime
-          </a>
-
-          <a role="button" className="navbar-burger is-active" aria-label="menu" aria-expanded="false">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
+          <a className="navbar-item" aria-hidden="true" href="/">
+            <i className="fa fa-music"></i>&emsp;Etherchime
           </a>
         </div>
 
   		  <div className="navbar-end">
   		    <div className="navbar-start">
-  		      <a className="navbar-item" href="/">
+  		      <a className="navbar-item" role="menuitem" href="/">
   		        Home
   		      </a>
-  		      <a className="navbar-item" href="/about">About</a>
-  		      <a className="navbar-item" href="/contact">Contact</a>
-            <a id="asideToggle" className="navbar-item" onClick={() => toggleAside()}>
+  		      <a className="navbar-item" role="menuitem" href="/about">About</a>
+  		      <a className="navbar-item" role="menuitem" href="/contact">Contact</a>
+            <a id="asideToggle" className="navbar-item" href="" role="menuitem" aria-haspopup="true" tabindex="0" onClick={() => toggleAside()}>
               Music&nbsp; &nbsp;<i className="fa fa-expand"></i>
             </a>
   		    </div>

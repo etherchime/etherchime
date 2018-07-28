@@ -26,8 +26,8 @@ class Aside extends Component {
     var categories = 
       this.state.categories.map((category, index) => {
         return (
-          <li key={category.key}>
-            <a href={"/music/" + category.key}>
+          <li key={category.key} role="menuitem">
+            <a href={"/music/" + category.key} tabindex="0">
               <i className={"fa " + category.icon} aria-hidden="true">
             </i>&nbsp; {category.name}</a>
           </li>
@@ -39,9 +39,11 @@ class Aside extends Component {
         <br /><p className="menu-label has-text-centered">
           Find Music For
         </p>
-        <ul className="menu-list has-text-indented">
-          {categories}
-        </ul>
+        <nav>
+          <ul className="menu-list has-text-indented" role="menu" aria-hidden="false">
+            {categories}
+          </ul>
+        </nav>
       </aside>
     );
   }
