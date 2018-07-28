@@ -10,7 +10,7 @@
   ,{
     "key": "videos",
     "name": "Video Productions",
-    "tagline": "Augment your video's presentation with an instrumental soundtrack.",
+    "tagline": "[Coming Soon] Augment your video's presentation with an instrumental soundtrack.",
     "features": ["nature-inspired scores", "rustic melodies", "overarching themes"],
     "icon": "fa-film",
     "tags": ["featured"]
@@ -18,7 +18,7 @@
   ,{
     "key": "meditation",
     "name": "Meditative Practices",
-    "tagline": "Elevate your mindfulness with a focused accompaniment.",
+    "tagline": "[Coming Soon] Elevate your mindfulness with a focused accompaniment.",
     "features": ["rejuvenating tracks", "ambient soundscapes", "guiding melodies"],
     "icon": "fa-bell-o",
     "tags": ["featured"]

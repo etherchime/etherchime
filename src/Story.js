@@ -10,7 +10,7 @@ class Story extends Component {
             <img src={this.props.imageUrl} alt={this.props.imageDescription} />
           </figure>
           <div className="title is-grouped-centered content is-overlay">
-            <AudioController audioUrl={this.props.audioUrl} />
+            <AudioController audioUrls={this.props.audioUrls} />
           </div>
         </div>
         <div className="card-content">

@@ -35,7 +35,7 @@ class Aside extends Component {
       });
 
     return (
-      <aside className="aside menu has-background-light">
+      <aside className="aside menu has-background-light is-fixed-desktop">
         <br /><p className="menu-label has-text-centered">
           Find Music For
         </p>

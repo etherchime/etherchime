@@ -30,7 +30,7 @@ class FeaturedStories extends Component {
         <React.Fragment>
           <div className='carousel-item has-background' key={"featured-stories-" + story.key}>
             <img className="is-background" src={story.imageUrl} alt={story.imageDescription} width="640" height="310" />
-            <AudioController audioUrl={story.audioUrl} />
+            <AudioController audioUrls={story.audioUrls} />
             <div className="carousel-item-title level has-text-white">
               <div className="level-item">
                 <h2><strong>{story.title}</strong></h2>

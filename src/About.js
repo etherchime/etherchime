@@ -3,6 +3,12 @@ import './About.css';
 import profile from './profile-acadia.JPG';
 
 class About extends Component {
+  constructor() {
+    super();
+    
+    document.title = "About the Composer - Etherchime";
+  }
+
   render() {
     return (
       <section className="section columns has-background-grey-lighter">

@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import './Contact.css';
 
 class Contact extends Component {
+  constructor() {
+    super();
+    
+    document.title = "Contact - Etherchime";
+  }
+
   render() {
     return (
       <section className="section columns is-medium has-background-grey-lighter">

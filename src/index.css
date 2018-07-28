@@ -48,3 +48,9 @@ a:hover, a:active, .navbar a:hover, .navbar a:active, .footer a:hover, .footer a
     -o-transform: rotate(45deg);
     transform: rotate(45deg);
 }
+
+@media screen and (min-width:1088px) {
+  .is-fixed-desktop {
+    position: fixed;
+  }
+}

@@ -7,18 +7,18 @@ class AudioController extends Component {
     super(props);
 
     this.state = {
-      audioId: props.audioId,
       isPlaying: false,
       volumeLevel: 0.5,
       audio: new Howl({
-        src: [props.audioUrl],
+        src: props.audioUrls,
         format: ['wav'],
         autoplay: false,
         loop: true,
         volume: 0.5
       }),
       playId: null,
-      html5: true
+      html5: true,
+      audioUrls: props.audioUrls
     };
 
     this.play = this.play.bind(this);
@@ -128,7 +128,7 @@ class AudioController extends Component {
             <i className="fa fa-volume-up"></i>
           </span>
         </a>
-        <a className="button" href={this.state.audioUrl} download={this.state.title}>
+        <a className="button" href={this.state.audioUrls[0]} download={this.state.title}>
           <span className="icon is-small">
             <i className="fa fa-download"></i>
           </span>

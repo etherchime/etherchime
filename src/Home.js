@@ -24,6 +24,9 @@ function toggleAside()
 class Home extends Component {
   constructor(props) {
     super(props);
+
+    document.title = "Home - Etherchime";
+
     this.state = {};
   }
 

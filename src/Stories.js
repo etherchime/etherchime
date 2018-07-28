@@ -12,6 +12,9 @@ function mod(n, m) {
 class Stories extends Component {
   constructor() {
     super();
+    
+    document.title = "Find Music - Etherchime";
+
     this.state = {
       stories: []
     };
@@ -53,15 +56,17 @@ class Stories extends Component {
     let storyRows = [];
     const columnsNo = 3;
     storiesData.forEach((story, index) => {
-        var remainderNo = mod(index + 1, columnsNo);
-        if (remainderNo === 0) {
-          var storyRow = storiesData.slice(index + 1 - columnsNo, index + 1);
-          storyRows.push(storyRow);
-        } else if (storiesData.length - index < columnsNo) {
-          var remainder = storiesData.splice(index, storiesData.length - index);
-          storyRows.push(remainder);
-        }
-      });
+      var count = index + 1;
+      var remainderNo = mod(count, columnsNo);
+      var remainingNo = storiesData.length - index;
+      if (remainderNo === 0) {
+        var storyRow = storiesData.slice(count - columnsNo, count);
+        storyRows.push(storyRow);
+      } else if (remainingNo < columnsNo && columnsNo - remainderNo > 1) {
+        var remainder = storiesData.splice(index, storiesData.length - index);
+        storyRows.push(remainder);
+      }
+    });
 
     this.setState({
       stories: storyRows
@@ -77,7 +82,7 @@ class Stories extends Component {
               return (
                 <div className="column is-one-third" key={index}>
                   <Story 
-                    audioUrl={story.audioUrl}
+                    audioUrls={story.audioUrls}
                     imageUrl={story.imageUrl}
                     imageDescription={story.imageDescription}
                     title={story.title}
