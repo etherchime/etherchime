@@ -10,7 +10,7 @@ class Story extends Component {
             <img src={this.props.imageUrl} alt={this.props.imageDescription} />
           </figure>
           <div className="title is-grouped-centered content is-overlay">
-            <AudioController audioUrls={this.props.audioUrls} />
+            <AudioController storyTitle={this.props.title} audioUrls={this.props.audioUrls} />
           </div>
         </div>
         <div className="card-content">
@@ -19,8 +19,8 @@ class Story extends Component {
               <h2 className="title is-4">{this.props.title}</h2>
               <p className="subtitle is-6">{this.props.description}</p>
               <ul className="content level">
-                <div class="level-item level-right"><span>
-                  <li className="is-inline has-text-grey-light"><i class="fa fa-lg fa-share"></i></li>&nbsp;
+                <div className="level-item level-right"><span>
+                  <li className="is-inline has-text-grey-light"><i className="fa fa-lg fa-share"></i></li>&nbsp;
                   <li className="is-inline"><a title="Share on Twitter" aria-label="Share on Twitter" href={"https://twitter.com/home?status=" + window.location.protocol + "//" + window.location.host + "/music?story=" + this.props.alias}>
                     <i className="fa fa-2x fa-twitter-square"></i>
                   </a></li>&nbsp;

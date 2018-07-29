@@ -13,15 +13,19 @@ class App extends Component {
     }
 
     return (
-      <div className="app columns is-gapless">
-	      <div id="appContainer" className="column" style={mainBg}>
-	        <div id="navRoot"></div>
+      <div className="has-background-light">
+        <div className="columns is-gapless is-marginless has-background-light">
+          <div id="navRoot" className="column"></div>
           <div id="asideRootTouch" className="is-hidden-desktop is-hidden column has-background-light"></div>
-          <main id="mainRoot"></main>
-	        <div id="footerRoot"></div>
-	      </div>
-	      <div id="asideRootDesktop" className="is-hidden-touch column is-hidden is-one-fifth-desktop has-background-light"></div>
-    	</div>
+          <div id="asideRootDesktop" className="is-hidden-touch column is-hidden has-background-light is-one-fifth-desktop is-pulled-right has-background-light"></div>
+        </div>
+        <div className="columns is-gapless is-marginless">
+  	      <div id="appContainer" className="column" style={mainBg}>
+            <main id="mainRoot"></main>
+  	        <div id="footerRoot"></div>
+  	      </div>
+      	</div>
+      </div>
     );
   }
 }

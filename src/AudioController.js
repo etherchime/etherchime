@@ -7,10 +7,11 @@ class AudioController extends Component {
     super(props);
 
     this.state = {
+      storyTitle: props.storyTitle,
       isPlaying: false,
       volumeLevel: 0.5,
       audio: new Howl({
-        src: props.audioUrls,
+        src: [ props.audioUrls[0] ],
         format: ['wav'],
         autoplay: false,
         loop: true,
@@ -32,6 +33,13 @@ class AudioController extends Component {
   play(e) {
     e.preventDefault();
 
+    // Use the the click version of this function should user hit enter.
+    var key = e.which || e.keyCode;
+    if (key === 13)  {
+      e.target.click();
+      return
+    }
+
     this.setState({
       isPlaying: true
     });
@@ -49,6 +57,13 @@ class AudioController extends Component {
 
   pause(e) {
     e.preventDefault();
+
+    // Use the the click version of this function should user hit enter.
+    var key = e.which || e.keyCode;
+    if (key === 13)  {
+      e.target.click();
+      return
+    }
 
     this.setState({
       isPlaying: false
@@ -69,6 +84,13 @@ class AudioController extends Component {
 
   soften(e) {
     e.preventDefault();
+
+    // Use the the click version of this function should user hit enter.
+    var key = e.which || e.keyCode;
+    if (key === 13)  {
+      e.target.click();
+      return
+    }
     
     if (this.state.audio.volume <= 0.0) return;
 
@@ -82,6 +104,13 @@ class AudioController extends Component {
 
   louden(e) {
     e.preventDefault();
+    
+    // Use the the click version of this function should user hit enter.
+    var key = e.which || e.keyCode;
+    if (key === 13)  {
+      e.target.click();
+      return
+    }
     
     if (this.state.audio.volume >= 1.0) return;
 
@@ -101,34 +130,27 @@ class AudioController extends Component {
             <i className="fa fa-fast-forward fa-flip-horizontal"></i>
           </span>
         </a>*/}
-			  <a className="button-play-pause button" tabindex="0" onClick={this.state.isPlaying ? this.pause : this.play}>
+			  <a title={"Play or pause " + this.state.storyTitle} aria-label={"Play or pause " + this.state.storyTitle} className="button-play-pause button" tabIndex="0" onClick={this.state.isPlaying ? this.pause : this.play} onKeyPress={this.state.isPlaying ? this.pause : this.play}>
 			    <span className="icon is-small">
 			      <i className={"fa " + (this.state.isPlaying ? "fa-pause" : "fa-play")}></i>
 			    </span>
 			  </a>
-			  <a className="button is-hidden" tabindex="0" onClick={this.pause}>
-			    <span className="icon is-small">
-			      <i className="fa fa-pause"></i>
-			    </span>
-			  </a>	  
 			  {/*<a className="button" onClick={this.fastForward}>
 			    <span className="icon is-small">
 			      <i className="fa fa-fast-forward"></i>
 			    </span>
 			  </a>*/}
-        <a className="button" tabindex="0" onClick={this.soften} 
-          disabled={this.state.volumeLevel <= 0.0}>
+        <a title="Decrease music volume" aria-label="Decrease music volume" className="button" tabIndex="0" onClick={this.soften} onKeyPress={this.soften} disabled={this.state.volumeLevel <= 0.0}>
           <span className="icon is-small">
             <i className="fa fa-volume-down"></i>
           </span>
         </a>
-        <a className="button" tabindex="0" onClick={this.louden}
-          disabled={this.state.volumeLevel >= 1.0}>
+        <a title="Increase music volume" aria-label="Increase music volume" className="button" tabIndex="0" onClick={this.louden} onKeyPress={this.louden} disabled={this.state.volumeLevel >= 1.0}>
           <span className="icon is-small">
             <i className="fa fa-volume-up"></i>
           </span>
         </a>
-        <a className="button" tabindex="0" href={this.state.audioUrls[0]} download={this.state.title}>
+        <a title={"Download " + this.state.storyTitle} aria-label={"Download " + this.state.storyTitle} className="button" tabIndex="0" href={this.state.audioUrls[1]} target="_blank" download={this.state.title}>
           <span className="icon is-small">
             <i className="fa fa-download"></i>
           </span>

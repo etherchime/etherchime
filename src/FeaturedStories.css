@@ -2,13 +2,7 @@
   justify-content: center;
 }
 
-.carousel-item-title {
-  width: 100%;
-  position: absolute;
-  top: 0;
-}
-
-.carousel-item-title .level-item {
+.carousel-item-title h2 {
   background: rgba(255,255,255,.7);
   border-radius: 0;
   width: 100%;

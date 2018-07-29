@@ -77,10 +77,10 @@ class Stories extends Component {
     var stories =
       this.state.stories.map((storyRow, index) => {
         return (
-          <div className="columns is-multiline">
+          <div key={"stories-row-" + index} className="columns is-multiline">
             {storyRow.map(story => {
               return (
-                <div className="column is-one-third" key={index}>
+                <div key={"stories-" + story.key} className="column is-one-third">
                   <Story 
                     alias={story.key}
                     audioUrls={story.audioUrls}
@@ -107,14 +107,18 @@ class Stories extends Component {
       <React.Fragment>
         <section className="hero has-background-grey-lighter">
           <div className="hero-body">
-            <div className="container">
-              <i className={"category-icon is-pulled-left fa fa-4x " + this.state.category.icon}></i>
-              <h1 className="title">
-                Music for {this.state.category.name}
-              </h1>
-              <p className="subtitle">
-                {this.state.category.tagline}
-              </p>
+            <div className="columns">
+              <div className="column is-one-fifth is-hidden-mobile has-text-centered">
+                <i className={"category-icon fa fa-4x " + this.state.category.icon}></i>
+              </div>
+              <div className="column is-four-fifths">
+                <h1 className="title">
+                  Music for {this.state.category.name}
+                </h1>
+                <p className="subtitle">
+                  {this.state.category.tagline}
+                </p>
+              </div>
             </div>
           </div>
         </section>

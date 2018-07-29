@@ -27,17 +27,17 @@ class Aside extends Component {
       this.state.categories.map((category, index) => {
         return (
           <li key={category.key} role="menuitem">
-            <a href={"/music/" + category.key} tabindex="0">
-              <i className={"fa " + category.icon} aria-hidden="true">
+            <a href={"/music/" + category.key} tabIndex="0">
+              <i className={"fa " + category.icon}>
             </i>&nbsp; {category.name}</a>
           </li>
         );
       });
 
     return (
-      <aside className="aside menu has-background-light is-fixed-desktop">
-        <br /><p className="menu-label has-text-centered">
-          Find Music For
+      <aside className="aside menu is-fullheight is-fixed-desktop">
+        <br /><p className="menu-label has-text-centered has-text-grey-darker">
+          <strong>Find Music For</strong>
         </p>
         <nav>
           <ul className="menu-list has-text-indented" role="menu" aria-hidden="false">

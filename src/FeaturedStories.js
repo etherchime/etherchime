@@ -36,15 +36,13 @@ class FeaturedStories extends Component {
   render() {
     var carouselItems = this.state.stories.map((story, index) => {
       return (
-        <React.Fragment>
+        <React.Fragment key={"featured-" + story.key}>
           <div className='carousel-item has-background' key={"featured-stories-" + story.key}>
-            <div className="carousel-item-title level has-text-white">
-              <div className="level-item">
-                <h2><a href={"/music?story=" + story.key}>{story.title}</a></h2>
-              </div>
+            <div className="carousel-item-title is-overlay has-text-white has-text-centered">
+              <h2><a href={"/music?story=" + story.key}>{story.title}</a></h2>
             </div>
             <img className="is-background" src={story.imageUrl} alt={story.imageDescription} width="640" height="310" />
-            <AudioController audioUrls={story.audioUrls} />
+            <AudioController storyTitle={story.title} audioUrls={story.audioUrls} />
           </div>
         </React.Fragment>
       );
@@ -52,16 +50,16 @@ class FeaturedStories extends Component {
 
     return (
       <div className="carousel carousel-animated carousel-animate-fade">
-        <div className="carousel-navigation is-overlay">
-          <div className="carousel-nav-left" tabindex="0" onKeyPress={this.navigate}>
-            <i className="fa fa-chevron-left"></i>
-          </div>
-          <div className="carousel-nav-right" tabindex="0" onKeyPress={this.navigate}>
-            <i className="fa fa-chevron-right"></i>
-          </div>
-        </div>
         <div className='carousel-container'>
           {carouselItems}
+        </div>
+        <div className="carousel-navigation is-overlay">
+          <div title="Listen to previous piece" aria-label="Listen to previous piece" role="button" className="carousel-nav-left" tabIndex="0" onKeyPress={this.navigate}>
+            <i className="fa fa-chevron-left"></i>
+          </div>
+          <div  title="Listen to next piece" aria-label="Listen to next piece" className="carousel-nav-right" tabIndex="0" onKeyPress={this.navigate}>
+            <i className="fa fa-chevron-right"></i>
+          </div>
         </div>
       </div>
     )
