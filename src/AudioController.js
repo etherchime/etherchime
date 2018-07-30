@@ -97,9 +97,9 @@ class AudioController extends Component {
     var newVolume = (Howler.volume() * 10 - 1) / 10;
     Howler.volume(newVolume);
     //this.state.audio.volume = (this.state.audio.volume * 10 - 1) / 10;
-    /*this.setState((prevState) => {
+    this.setState((prevState) => {
       return { volumeLevel: (prevState.volumeLevel * 10 - 1) / 10 }
-    });*/
+    });
   }
 
   louden(e) {
@@ -111,15 +111,15 @@ class AudioController extends Component {
       e.target.click();
       return
     }
-    
+
     if (this.state.audio.volume >= 1.0) return;
 
     var newVolume = (Howler.volume() * 10 + 1) / 10;
     Howler.volume(newVolume);
     //this.state.audio.volume = (this.state.audio.volume * 10 + 1) / 10;
-    /*this.setState((prevState) => {
+    this.setState((prevState) => {
       return { volumeLevel: (prevState.volumeLevel * 10 + 1) / 10 }
-    });*/
+    });
   }
 
 	render() {
