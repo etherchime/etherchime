@@ -10,13 +10,13 @@ class Footer extends Component {
               </p>
               <p>
                 <a title="Find me on Instagram" aria-label="Find me on Instagram" href="https://www.instagram.com/etherchime" target="_blank" rel="noopener noreferrer">
-                  <i className="fa fa-instagram fa-lg"></i>
+                  <i className="fab fa-instagram fa-lg"></i>
                 </a>&emsp;
                 <a title="Find me on SoundCloud" aria-label="Find me on SoundCloud" href="https://soundcloud.com/etherchime" target="_blank" rel="noopener noreferrer">
-                  <i className="fa fa-soundcloud fa-lg"></i>
+                  <i className="fab fa-soundcloud fa-lg"></i>
                 </a>&emsp;
                 <a title="Find me on LinkedIn" aria-label="Find me on LinkedIn" href="https://www.linkedin.com/in/bshewmake" target="_blank" rel="noopener noreferrer">
-                  <i className="fa fa-linkedin fa-lg"></i>
+                  <i className="fab fa-linkedin fa-lg"></i>
                 </a>&emsp;
                 <a title="How to contact me" aria-label="How to contact me" href="/contact" target="_blank" rel="noopener noreferrer">
                   <i className="fa fa-envelope fa-lg"></i>

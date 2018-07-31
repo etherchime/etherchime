@@ -2,9 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Switch, BrowserRouter, Route } from 'react-router-dom';
 import 'bulma/css/bulma.min.css';
-import 'bulma-carousel/dist/css/bulma-carousel.min.css'
-import 'bulma-carousel/dist/js/bulma-carousel.min.js'
-import 'font-awesome/css/font-awesome.min.css'; 
+import 'bulma-carousel/dist/css/bulma-carousel.min.css';
+import 'bulma-carousel/dist/js/bulma-carousel.min.js';
 import './index.css';
 import App from './App';
 import Nav from './Nav';
@@ -16,6 +15,9 @@ import Footer from './Footer';
 import Aside from './Aside';
 import registerServiceWorker from './registerServiceWorker';
 
+window.FontAwesomeConfig = {
+  searchPseudoElements: true
+};
 ReactDOM.render(<App />, document.getElementById("appRoot"));
 ReactDOM.render(<Nav />, document.getElementById("navRoot"));
 ReactDOM.render(

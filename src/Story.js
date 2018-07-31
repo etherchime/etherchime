@@ -71,7 +71,7 @@ class Story extends Component {
                     <li className="is-inline"><a title="Share on Pinterest" aria-label="Share on Pinterest" href={"https://pinterest.com/pin/create/button/?url=" + window.location.protocol + "//" + window.location.host + "/music?story=" + this.props.alias + "&media=" + this.props.imageUrl + "&description=" + this.props.description} target="_blank" rel="noopener noreferrer">
                       <i className="fa fa-2x fa-pinterest-square"></i>
                     </a></li>&nbsp;
-                    <li className="is-inline"><a title="Copy link to clipboard" aria-label="Copy link to clipboard" onClick={ () => this.copy(window.location.protocol + "//" + window.location.host + "/music?story=" + this.props.alias)} onKeyPress={ () => this.copy(window.location.protocol + "//" + window.location.host + "/music?story=" + this.props.alias)}>
+                    <li className="is-inline"><a title="Copy link to clipboard" aria-label="Copy link to clipboard" onClick={ () => this.copy(window.location.protocol + "//" + window.location.host + "/music?story=" + this.props.alias)} onKeyPress={ () => this.copy(window.location.protocol + "//" + window.location.host + "/music?story=" + this.props.alias)} tabIndex="0">
                       <i className="fa fa-2x fa-copy"></i>
                     </a></li>
                   </span>

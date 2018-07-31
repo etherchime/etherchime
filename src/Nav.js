@@ -41,8 +41,8 @@ class Nav extends Component {
     return (
   		<nav className="nav navbar has-background-white-ter">
         <div className="navbar-brand">
-          <a className="navbar-item" aria-hidden="true" href="/">
-            <i className="fa fa-music"></i>&emsp;Etherchime
+          <a className="navbar-item" href="/">
+            ETHERCHIME&nbsp;<i className="fa fa-headphones-alt fa-lg"></i>
           </a>
         </div>
 

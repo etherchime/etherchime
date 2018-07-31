@@ -28,8 +28,7 @@ class Aside extends Component {
         return (
           <li key={category.key} role="menuitem">
             <a href={"/music/" + category.key} tabIndex="0">
-              <i className={"fa " + category.icon}>
-            </i>&nbsp; {category.name}</a>
+              <i className={"fa " + category.icon}></i>&emsp;{category.name}</a>
           </li>
         );
       });

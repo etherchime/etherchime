@@ -20,7 +20,7 @@
     "name": "Meditative Practices",
     "tagline": "Coming Soon: Elevate your mindfulness with a focused accompaniment.",
     "features": ["rejuvenating tracks", "ambient soundscapes", "guiding melodies"],
-    "icon": "fa-bell-o",
+    "icon": "fa-spa",
     "tags": ["featured"]
   }
   ,{
@@ -28,7 +28,7 @@
     "name": "Anything",
     "tagline": "Explore soundtracks for a variety of needs.",
     "features": [],
-    "icon": "fa-circle-o",
+    "icon": "fa-circle-notch",
     "tags": []
   }
   ,{
@@ -36,7 +36,7 @@
     "name": "Winter",
     "tagline": "Pair music with ice-clear stargazing and warm drinks.",
     "features": [],
-    "icon": "fa-tree",
+    "icon": "fa-snowflake",
     "tags": []
   }
   ,{
@@ -44,7 +44,7 @@
     "name": "Spring",
     "tagline": "Pair music with blooming foliage and dawn's birdsongs.",
     "features": [],
-    "icon": "fa-leaf",
+    "icon": "fa-seedling",
     "tags": []
   }
   ,{
@@ -52,7 +52,7 @@
     "name": "Summer",
     "tagline": "Pair music with sunlit water and stormy afternoons.",
     "features": [],
-    "icon": "fa-sun-o",
+    "icon": "fa-sun",
     "tags": []
   }
   ,{
@@ -60,7 +60,7 @@
     "name": "Autumn",
     "tagline": "Pair music with windborn leaves and moonlit evenings.",
     "features": [],
-    "icon": "fa-moon-o",
+    "icon": "fa-moon",
     "tags": []
   }
 ]
