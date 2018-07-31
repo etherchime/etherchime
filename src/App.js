@@ -14,7 +14,7 @@ class App extends Component {
 
     return (
       <div className="has-background-light">
-        <div className="columns is-gapless is-marginless has-background-light">
+        <div className="columns is-desktop is-gapless is-marginless has-background-light">
           <div id="navRoot" className="column"></div>
           <div id="asideRootTouch" className="is-hidden-desktop is-hidden column has-background-light"></div>
           <div id="asideRootDesktop" className="is-hidden-touch column is-hidden has-background-light is-one-fifth-desktop is-pulled-right has-background-light"></div>
