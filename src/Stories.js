@@ -3,7 +3,7 @@ import './Stories.css';
 import Story from './Story';
 import StoriesData from './StoriesData.json';
 import CategoriesData from './Categories.json';
-import queryString from 'query-string';
+import qs from 'qs';
 
 function mod(n, m) {
   return ((n % m) + m) % m;
@@ -34,7 +34,7 @@ class Stories extends Component {
 
   componentDidMount() {
     const { match: { params } } = this.props;
-    const queryParams = queryString.parse(this.props.location.search);
+    const queryParams = qs.parse(this.props.location.search);
 
     var storiesData = !params.category || params.category === "anything" ? StoriesData :
       StoriesData.filter(function(story, index) {
