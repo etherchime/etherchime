@@ -89,7 +89,7 @@ class Home extends Component {
             <h1 className="has-text-weight-normal is-size-4">
               Music for <a title="Learn about music for video games" aria-label="Learn about music for video games" href="#musicFor-games">video games</a>, <a title="Learn about music for video productions" aria-label="Learn about music for video productions" href="#musicFor-videos">video productions</a>, and <a title="Learn about music for video games" aria-label="Learn about music for meditative practices" href="#musicFor-meditation">meditative practices</a> - composed by Brandon Shewmake.
             </h1><br />
-            <p className="content is-size-4">Find free music for your project licensed under <a href="">License To-Be-Determined</a>, or request original compositions by <a href="/contact">contacting me</a>.</p>
+            <p className="content is-size-4">Find free music for your project licensed under <a href="https://creativecommons.org/licenses/by-nd/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons BY-ND 4.0</a>, or request original compositions by <a href="/contact">contacting me</a>.</p>
           </div>
           <div className="column is-half">
             <FeaturedStories />

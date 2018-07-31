@@ -63,13 +63,13 @@ class Story extends Component {
                   <span>
                     <li className="is-inline has-text-grey-light"><i className="fa fa-lg fa-share"></i></li>&nbsp;
                     <li className="is-inline"><a title="Share on Twitter" aria-label="Share on Twitter" href={"https://twitter.com/home?status=" + "Check%20out%20this%20music%21%20" + window.location.protocol + "//" + window.location.host + "/music?story=" + this.props.alias + "%20%23etherchime"} target="_blank" rel="noopener noreferrer">
-                      <i className="fa fa-2x fa-twitter-square"></i>
+                      <i className="fab fa-2x fa-twitter-square"></i>
                     </a></li>&nbsp;
                     <li className="is-inline"><a title="Share on Facebook" aria-label="Share on Facebook" href={"https://www.facebook.com/sharer/sharer.php?u=" + window.location.protocol + "//" + window.location.host + "/music?story=" + this.props.alias} target="_blank" rel="noopener noreferrer">
-                      <i className="fa fa-2x fa-facebook-square"></i>
+                      <i className="fab fa-2x fa-facebook-square"></i>
                     </a></li>&nbsp;
                     <li className="is-inline"><a title="Share on Pinterest" aria-label="Share on Pinterest" href={"https://pinterest.com/pin/create/button/?url=" + window.location.protocol + "//" + window.location.host + "/music?story=" + this.props.alias + "&media=" + this.props.imageUrl + "&description=" + this.props.description} target="_blank" rel="noopener noreferrer">
-                      <i className="fa fa-2x fa-pinterest-square"></i>
+                      <i className="fab fa-2x fa-pinterest-square"></i>
                     </a></li>&nbsp;
                     <li className="is-inline"><a title="Copy link to clipboard" aria-label="Copy link to clipboard" onClick={ () => this.copy(window.location.protocol + "//" + window.location.host + "/music?story=" + this.props.alias)} onKeyPress={ () => this.copy(window.location.protocol + "//" + window.location.host + "/music?story=" + this.props.alias)} tabIndex="0">
                       <i className="fa fa-2x fa-copy"></i>
