@@ -10,7 +10,7 @@
   ,{
     "key": "videos",
     "name": "Video Productions",
-    "tagline": "Coming Soon: Augment your video's presentation with an instrumental soundtrack.",
+    "tagline": "Augment your video's presentation with an instrumental soundtrack.",
     "features": ["nature-inspired scores", "rustic melodies", "overarching themes"],
     "icon": "fa-film",
     "tags": ["featured"]
