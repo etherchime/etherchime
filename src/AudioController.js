@@ -7,8 +7,9 @@ class AudioController extends Component {
     super(props);
 
     this.state = {
+      playRef: React.createRef(),
+      pauseRef: React.createRef(),
       storyTitle: props.storyTitle,
-      isPlaying: false,
       volumeLevel: 0.5,
       audio: new Howl({
         src: [ props.audioUrls[0] ],
@@ -40,15 +41,20 @@ class AudioController extends Component {
       return
     }
 
-    this.setState({
-      isPlaying: true
-    });
-
     var thisPlayId = this.state.playId;
     Howler._howls
       .filter(function(howl, index) {
         return howl._sounds[0]._id !== thisPlayId;
       }).forEach(howl => howl.stop());
+
+    var pauseButtons = document.getElementsByClassName("button-pause");
+    [].forEach.call(pauseButtons, function(p) { p.classList.add("is-hidden"); });
+
+    var playButtons = document.getElementsByClassName("button-play");
+    [].forEach.call(playButtons, function(p) { p.classList.remove("is-hidden"); });
+
+    this.state.playRef.current.classList.add("is-hidden");
+    this.state.pauseRef.current.classList.remove("is-hidden");
 
     this.setState({
       playId: this.state.audio.play()
@@ -65,11 +71,10 @@ class AudioController extends Component {
       return
     }
 
-    this.setState({
-      isPlaying: false
-    });
-
     this.state.audio.pause();
+
+    this.state.playRef.current.classList.remove("is-hidden");
+    this.state.pauseRef.current.classList.add("is-hidden");
   }
 
   /*rewind(e) {
@@ -92,13 +97,19 @@ class AudioController extends Component {
       return
     }
     
-    if (this.state.audio.volume <= 0.0) return;
+    var softenButtons = document.getElementsByClassName("button-soften");
+    if (this.state.volumeLevel <= 0.0) {
+      [].forEach.call(softenButtons, function(s) { s.setAttribute("disabled", "disabled"); });
+      return;
+    }
+    [].forEach.call(softenButtons, function(s) { s.removeAttribute("disabled"); });
+    var loudenButtons = document.getElementsByClassName("button-louden");
+    [].forEach.call(loudenButtons, function(l) { l.removeAttribute("disabled"); });
 
-    var newVolume = (Howler.volume() * 10 - 1) / 10;
-    Howler.volume(newVolume);
-    //this.state.audio.volume = (this.state.audio.volume * 10 - 1) / 10;
     this.setState((prevState) => {
-      return { volumeLevel: (prevState.volumeLevel * 10 - 1) / 10 }
+      var newVolume = (prevState.volumeLevel * 10 - 1) / 10;
+      Howler.volume(newVolume);
+      return { volumeLevel: newVolume }
     });
   }
 
@@ -112,13 +123,19 @@ class AudioController extends Component {
       return
     }
 
-    if (this.state.audio.volume >= 1.0) return;
-
-    var newVolume = (Howler.volume() * 10 + 1) / 10;
-    Howler.volume(newVolume);
-    //this.state.audio.volume = (this.state.audio.volume * 10 + 1) / 10;
+    var loudenButtons = document.getElementsByClassName("button-louden");
+    if (this.state.volumeLevel >= 1.0) {
+      [].forEach.call(loudenButtons, function(l) { l.setAttribute("disabled", "disabled"); });
+      return;
+    }
+    [].forEach.call(loudenButtons, function(l) { l.removeAttribute("disabled"); });
+    var softenButtons = document.getElementsByClassName("button-soften");
+    [].forEach.call(softenButtons, function(s) { s.removeAttribute("disabled"); });
+    
     this.setState((prevState) => {
-      return { volumeLevel: (prevState.volumeLevel * 10 + 1) / 10 }
+      var newVolume = (prevState.volumeLevel * 10 + 1) / 10;
+      Howler.volume(newVolume);
+      return { volumeLevel: newVolume }
     });
   }
 
@@ -130,22 +147,27 @@ class AudioController extends Component {
             <i className="fa fa-fast-forward fa-flip-horizontal"></i>
           </span>
         </a>*/}
-			  <a title={"Play or pause " + this.state.storyTitle} aria-label={"Play or pause " + this.state.storyTitle} className="button-play-pause button" tabIndex="0" onClick={this.state.isPlaying ? this.pause : this.play} onKeyPress={this.state.isPlaying ? this.pause : this.play}>
+			  <a ref={this.state.playRef} title={"Play " + this.state.storyTitle} aria-label={"Play " + this.state.storyTitle} className="button-play button" tabIndex="0" onClick={this.play} onKeyPress={this.play}>
 			    <span className="icon is-small">
-			      <i className={"fa " + (this.state.isPlaying ? "fa-pause" : "fa-play")}></i>
+			      <i className="fa fa-play"></i>
 			    </span>
 			  </a>
+        <a ref={this.state.pauseRef} title={"Pause " + this.state.storyTitle} aria-label={"Pause " + this.state.storyTitle} className="button-pause button is-hidden" tabIndex="0" onClick={this.pause} onKeyPress={this.pause}>
+          <span className="icon is-small">
+            <i className="fa fa-pause"></i>
+          </span>
+        </a>
 			  {/*<a className="button" onClick={this.fastForward}>
 			    <span className="icon is-small">
 			      <i className="fa fa-fast-forward"></i>
 			    </span>
 			  </a>*/}
-        <a title="Decrease music volume" aria-label="Decrease music volume" className="button" tabIndex="0" onClick={this.soften} onKeyPress={this.soften} disabled={this.state.volumeLevel <= 0.0}>
+        <a title="Decrease music volume" aria-label="Decrease music volume" className="button-soften button" tabIndex="0" onClick={this.soften} onKeyPress={this.soften}>
           <span className="icon is-small">
             <i className="fa fa-volume-down"></i>
           </span>
         </a>
-        <a title="Increase music volume" aria-label="Increase music volume" className="button" tabIndex="0" onClick={this.louden} onKeyPress={this.louden} disabled={this.state.volumeLevel >= 1.0}>
+        <a title="Increase music volume" aria-label="Increase music volume" className="button-louden button" tabIndex="0" onClick={this.louden} onKeyPress={this.louden}>
           <span className="icon is-small">
             <i className="fa fa-volume-up"></i>
           </span>

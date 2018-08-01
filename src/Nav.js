@@ -6,6 +6,7 @@ class Nav extends Component {
     super(props);
 
     this.toggleAside = this.toggleAside.bind(this);
+    this.toggleMenu = this.toggleMenu.bind(this);
   }
 
   toggleAside(e) {
@@ -37,17 +38,37 @@ class Nav extends Component {
     appContainer.classList.toggle("is-four-fifths-desktop");
   }
 
+  toggleMenu(e) {
+    e.preventDefault();
+
+    // Get the target from the "data-target" attribute
+    const target = e.target.dataset.target;
+    const $target = document.getElementById(target);
+
+    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+    e.target.classList.toggle('is-active');
+
+    if (!$target) return;
+    
+    $target.classList.toggle('is-active');
+  }
+
   render() {
     return (
-  		<nav className="nav navbar has-background-white-ter">
+  		<nav className="nav navbar is-transparent has-background-white-ter">
         <div className="navbar-brand">
           <a className="navbar-item" href="/">
             ETHERCHIME&nbsp;<i className="fa fa-headphones-alt fa-lg"></i>
           </a>
+          <a role="button" className="navbar-burger" onClick={this.toggleMenu} data-target="navMenu" aria-label="menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
         </div>
 
-  		  <div className="navbar-end">
-  		    <div className="navbar-start">
+  		  <div id="navMenu" className="navbar-menu has-background-white-ter">
+          <div className="navbar-end">
   		      <a className="navbar-item" role="menuitem" href="/">
   		        Home
   		      </a>
@@ -56,7 +77,7 @@ class Nav extends Component {
             <a id="asideToggle" title="Search for music" aria-label="Search for music" role="button" tabIndex="0" className="navbar-item" href="" role="menuitem" aria-haspopup="true" tabIndex="0" onClick={this.toggleAside} onKeyPress={this.toggleAside}>
               Music&nbsp; &nbsp;<i className="fa fa-expand"></i>
             </a>
-  		    </div>
+          </div>
   		  </div>
   		</nav>
     );
