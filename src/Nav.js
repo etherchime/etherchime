@@ -49,7 +49,7 @@ class Nav extends Component {
     e.target.classList.toggle('is-active');
 
     if (!$target) return;
-    
+
     $target.classList.toggle('is-active');
   }
 
@@ -58,7 +58,7 @@ class Nav extends Component {
   		<nav className="nav navbar is-transparent has-background-white-ter">
         <div className="navbar-brand">
           <a className="navbar-item" href="/">
-            ETHERCHIME&nbsp;<i className="fa fa-headphones-alt fa-lg"></i>
+            ETHERCHIME&ensp;<img className="brand-icon" src="/favicon-48.png" />
           </a>
           <a role="button" className="navbar-burger" onClick={this.toggleMenu} data-target="navMenu" aria-label="menu" aria-expanded="false">
             <span></span>

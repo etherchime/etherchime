@@ -1,9 +1,9 @@
-.Header-logo {
-  animation: Header-logo-spin infinite 20s linear;
-  height: 80px;
+.brand-icon {
+  animation: brand-icon-spin infinite 45s linear;
+  height: 24px;
 }
 
-@keyframes Header-logo-spin {
+@keyframes brand-icon-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
