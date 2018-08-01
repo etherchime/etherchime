@@ -7,7 +7,7 @@ class Home extends Component {
   constructor(props) {
     super(props);
 
-    document.title = "Home - Etherchime";
+    document.title = "Royalty-Free Music - Etherchime";
 
     this.toggleAside = this.toggleAside.bind(this);
   }

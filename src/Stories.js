@@ -13,8 +13,6 @@ class Stories extends Component {
   constructor() {
     super();
     
-    document.title = "Find Music - Etherchime";
-
     this.state = {
       stories: []
     };
@@ -26,6 +24,8 @@ class Stories extends Component {
     var category = CategoriesData.filter(function(category, index) {
       return category.key === (params.category || "anything");
     })[0];
+
+    document.title = "Find Royalty-Free Music for " + params.category.Name + " - Etherchime";
 
     this.setState({
       category: category
