@@ -25,7 +25,7 @@ class Stories extends Component {
       return category.key === (params.category || "anything");
     })[0];
 
-    document.title = "Find Royalty-Free Music for " + params.category.name + " - Etherchime";
+    document.title = "Find Royalty-Free Music for " + category.name + " - Etherchime";
 
     this.setState({
       category: category
