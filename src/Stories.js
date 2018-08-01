@@ -43,15 +43,18 @@ class Stories extends Component {
         return story.tags.indexOf(params.category) !== -1;
       });
 
-    storiesData = 
-      !queryParams.story || 
-      queryParams.story === null || 
-      queryParams.story.match(/^ *$/) !== null ? storiesData :
+    var isFilteredToStory = queryParams.story && 
+      queryParams.story !== null &&
+      queryParams.story.match(/^ *$/) === null;
+    storiesData = !isFilteredToStory ? storiesData :
       storiesData.filter(function(story, index) {
         if (!story.key || story.key === null || story.key.match(/^ *$/) !== null) return false;
 
         return story.key.toUpperCase() === queryParams.story.toUpperCase();
       });
+    if (isFilteredToStory === true) {
+      document.title = storiesData[0].title + " - Royalty-Free Music - Etherchime";
+    }
 
     let storyRows = [];
     const columnsNo = 3;
