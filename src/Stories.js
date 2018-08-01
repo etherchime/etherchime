@@ -34,7 +34,7 @@ class Stories extends Component {
 
   componentDidMount() {
     const { match: { params } } = this.props;
-    const queryParams = qs.parse(this.props.location.search);
+    const queryParams = qs.parse(this.props.location.search, { ignoreQueryPrefix: true });
 
     var storiesData = !params.category || params.category === "anything" ? StoriesData :
       StoriesData.filter(function(story, index) {
