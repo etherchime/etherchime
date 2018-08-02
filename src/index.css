@@ -49,6 +49,12 @@ a:hover, a:active, .navbar a:hover, .navbar a:active, .footer a:hover, .footer a
     transform: rotate(45deg);
 }
 
+@media screen and (min-width:769px) {
+  .fa-sm-mobile {
+      font-size: .875em;
+  }
+}
+
 @media screen and (min-width:1088px) {
   .is-fixed-desktop {
     position: fixed;

@@ -11,7 +11,7 @@ class About extends Component {
 
   render() {
     return (
-      <section className="section columns is-marginless has-background-grey-lighter">
+      <section className="about section columns is-marginless has-background-grey-lighter">
       	<div className="container column is-two-fifths is-narrow has-text-justified">
           <div className="level">
             <div className="level-item">

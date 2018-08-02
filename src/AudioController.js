@@ -16,7 +16,7 @@ class AudioController extends Component {
         format: ['wav'],
         autoplay: false,
         loop: true,
-        volume: 0.5
+        volume: 1
       }),
       playId: null,
       html5: true,
@@ -162,7 +162,7 @@ class AudioController extends Component {
 			      <i className="fa fa-fast-forward"></i>
 			    </span>
 			  </a>*/}
-        <a title="Decrease music volume" aria-label="Decrease music volume" className="button-soften button" tabIndex="0" onClick={this.soften} onKeyPress={this.soften}>
+        {/*<a title="Decrease music volume" aria-label="Decrease music volume" className="button-soften button" tabIndex="0" onClick={this.soften} onKeyPress={this.soften}>
           <span className="icon is-small">
             <i className="fa fa-volume-down"></i>
           </span>
@@ -171,7 +171,7 @@ class AudioController extends Component {
           <span className="icon is-small">
             <i className="fa fa-volume-up"></i>
           </span>
-        </a>
+        </a>*/}
         <a title={"Download " + this.state.storyTitle} aria-label={"Download " + this.state.storyTitle} className="button" tabIndex="0" href={this.state.audioUrls[1]} target="_blank" download={this.state.title}>
           <span className="icon is-small">
             <i className="fa fa-download"></i>

@@ -1,5 +1,6 @@
 .brand-icon {
-  animation: brand-icon-spin infinite 45s linear;
+  animation: brand-icon-spin infinite 24s linear,
+             brand-icon-fade 1.5s linear;
   height: 24px;
 }
 
@@ -10,4 +11,9 @@
 
 .navbar-brand .navbar-item {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+@keyframes brand-icon-fade { /* flame pulses */
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
 }

@@ -107,7 +107,7 @@ class Stories extends Component {
       </section>;
 
     return (
-      <React.Fragment>
+      <section className="stories">
         <section className="hero has-background-grey-lighter">
           <div className="hero-body">
             <div className="columns">
@@ -128,7 +128,7 @@ class Stories extends Component {
         <section className="section">
           {this.state.stories && this.state.stories.length > 0 ? stories : noStories}
         </section>
-      </React.Fragment>
+      </section>
     );
   }
 }
