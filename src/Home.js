@@ -2,43 +2,13 @@ import React, { Component } from 'react';
 import './Home.css';
 import FeaturedStories from './FeaturedStories';
 import CategoriesData from './Categories.json';
+import { toggleStoryFilters, onEnter } from './utilities';
 
 class Home extends Component {
   constructor(props) {
     super(props);
 
     document.title = "Royalty-Free Music - Etherchime";
-
-    this.toggleAside = this.toggleAside.bind(this);
-  }
-
-  toggleAside(e) {
-    e.preventDefault();
-
-    // Use the the click version of this function should user hit enter.
-    var key = e.which || e.keyCode;
-    if (key === 13)  {
-      e.target.click();
-      return
-    }
-    
-    var asideToggle = document.getElementById("asideToggle");
-
-    var nav = document.getElementById("navRoot");
-    nav.classList.toggle("is-four-fifths");
-
-    var asideIcon = asideToggle.getElementsByTagName("i")[0];
-      asideIcon.classList.toggle("fa-expand");
-      asideIcon.classList.toggle("fa-compress");
-
-    var asideRootTouch = document.getElementById("asideRootTouch");
-      asideRootTouch.classList.toggle("is-hidden");
-
-    var asideRootDesktop = document.getElementById("asideRootDesktop");
-      asideRootDesktop.classList.toggle("is-hidden");
-
-    var appContainer = document.getElementById("appContainer");
-    appContainer.classList.toggle("is-four-fifths-desktop");
   }
 
   componentWillMount()
@@ -99,7 +69,7 @@ class Home extends Component {
         <section className="section columns is-marginless has-background-grey-lighter is-0 is-vertically-centered">
           <div className="column has-text-centered">
             <h1 className="has-text-weight-normal is-size-4">
-              <p><a title="Search for music" aria-label="Search for music" role="button" tabIndex="0" onClick={this.toggleAside} onKeyPress={this.toggleAside}>Find music for your project.</a></p>
+              <p><a title="Search for music" aria-label="Search for music" role="button" href="" tabIndex="0" onClick={toggleStoryFilters} onKeyPress={(e) => { onEnter(e, toggleStoryFilters); }}>Find music for your project.</a></p>
             </h1>
           </div>
         </section>
