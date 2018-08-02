@@ -13,7 +13,7 @@ import About from './About';
 import Contact from './Contact';
 import Footer from './Footer';
 import Aside from './Aside';
-import registerServiceWorker from './registerServiceWorker';
+import { unregister } from './registerServiceWorker';
 
 window.FontAwesomeConfig = {
   searchPseudoElements: true
@@ -34,4 +34,4 @@ ReactDOM.render(<Footer />, document.getElementById("footerRoot"));
 ReactDOM.render(<Aside />, document.getElementById("asideRootTouch"));
 ReactDOM.render(<Aside />, document.getElementById("asideRootDesktop"));
 
-registerServiceWorker();
+unregister();
