@@ -52,7 +52,15 @@ class Stories extends Component {
 
         return story.key.toUpperCase() === queryParams.story.toUpperCase();
       });
+
+    this.setState({
+      isFilteredToStory: isFilteredToStory
+    });
+
     if (isFilteredToStory === true) {
+      this.setState({
+        story: storiesData[0]
+      });
       document.title = storiesData[0].title + " - Royalty-Free Music - Etherchime";
     }
 
@@ -112,14 +120,14 @@ class Stories extends Component {
           <div className="hero-body">
             <div className="columns">
               <div className="column is-one-fifth is-hidden-mobile has-text-centered">
-                <i className={"category-icon fa fa-4x " + this.state.category.icon}></i>
+                <i className={"category-icon fa fa-4x " + (this.state.isFilteredToStory ? "fa-music" : this.state.category.icon)}></i>
               </div>
               <div className="column is-four-fifths">
                 <h1 className="title">
-                  Music for {this.state.category.name}
+                  {this.state.isFilteredToStory ? this.state.story.title : "Music for " + this.state.category.name}
                 </h1>
                 <p className="subtitle">
-                  {this.state.category.tagline}
+                  {this.state.isFilteredToStory ? "" : this.state.category.tagline}
                 </p>
               </div>
             </div>
