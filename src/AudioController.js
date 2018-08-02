@@ -9,6 +9,7 @@ class AudioController extends Component {
     this.state = {
       playRef: React.createRef(),
       pauseRef: React.createRef(),
+      stopRef: React.createRef(),
       storyTitle: props.storyTitle,
       volumeLevel: 0.5,
       audio: new Howl({
@@ -25,6 +26,7 @@ class AudioController extends Component {
 
     this.play = this.play.bind(this);
     this.pause = this.pause.bind(this);
+    this.stop = this.stop.bind(this);
     //this.rewind = this.rewind.bind(this);
     //this.fastForward = this.fastForward.bind(this);
     this.soften = this.soften.bind(this);
@@ -47,14 +49,23 @@ class AudioController extends Component {
         return howl._sounds[0]._id !== thisPlayId;
       }).forEach(howl => howl.stop());
 
-    var pauseButtons = document.getElementsByClassName("button-pause");
-    [].forEach.call(pauseButtons, function(p) { p.classList.add("is-hidden"); });
-
     var playButtons = document.getElementsByClassName("button-play");
     [].forEach.call(playButtons, function(p) { p.classList.remove("is-hidden"); });
 
+    var pauseButtons = document.getElementsByClassName("button-pause");
+    [].forEach.call(pauseButtons, function(p) { p.classList.add("is-hidden"); });
+
+    var stopButtons = document.getElementsByClassName("button-stop");
+    [].forEach.call(stopButtons, function(p) { p.classList.add("is-hidden"); });
+
     this.state.playRef.current.classList.add("is-hidden");
     this.state.pauseRef.current.classList.remove("is-hidden");
+    this.state.stopRef.current.classList.remove("is-hidden");
+
+    // Return if already playing.
+    if (this.state.audio && 
+        this.state.audio != null && 
+        this.state.audio.playing()) return;
 
     this.setState({
       playId: this.state.audio.play()
@@ -75,6 +86,23 @@ class AudioController extends Component {
 
     this.state.playRef.current.classList.remove("is-hidden");
     this.state.pauseRef.current.classList.add("is-hidden");
+  }
+
+  stop(e) {
+    e.preventDefault();
+
+    // Use the the click version of this function should user hit enter.
+    var key = e.which || e.keyCode;
+    if (key === 13)  {
+      e.target.click();
+      return
+    }
+
+    this.state.audio.stop();
+
+    this.state.playRef.current.classList.remove("is-hidden");
+    this.state.pauseRef.current.classList.add("is-hidden");
+    this.state.stopRef.current.classList.add("is-hidden");
   }
 
   /*rewind(e) {
@@ -155,6 +183,11 @@ class AudioController extends Component {
         <a ref={this.state.pauseRef} title={"Pause " + this.state.storyTitle} aria-label={"Pause " + this.state.storyTitle} className="button-pause button is-hidden" tabIndex="0" onClick={this.pause} onKeyPress={this.pause}>
           <span className="icon is-small">
             <i className="fa fa-pause"></i>
+          </span>
+        </a>
+        <a ref={this.state.stopRef} title={"Stop " + this.state.storyTitle} aria-label={"Stop " + this.state.storyTitle} className="button-stop button is-hidden" tabIndex="0" onClick={this.stop} onKeyPress={this.stop}>
+          <span className="icon is-small">
+            <i className="fa fa-stop"></i>
           </span>
         </a>
 			  {/*<a className="button" onClick={this.fastForward}>
