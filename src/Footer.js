@@ -21,7 +21,7 @@ class Footer extends Component {
                 <a title="How to contact me" aria-label="How to contact me" href="/contact" target="_blank" rel="noopener noreferrer">
                   <i className="fa fa-envelope fa-lg"></i>
                 </a>&emsp;
-                <a title="Subscribe to my RSS feed" aria-label="Subscribe to my RSS feed" href="http://feeds.soundcloud.com/users/soundcloud:users:309448348/sounds.rss" target="_blank" rel="noopener noreferrer">
+                <a title="Subscribe to my RSS feed" aria-label="Subscribe to my RSS feed" href="https://feeds.soundcloud.com/users/soundcloud:users:309448348/sounds.rss" target="_blank" rel="noopener noreferrer">
                   <i className="fa fa-rss fa-lg"></i>
                 </a>
               </p>
