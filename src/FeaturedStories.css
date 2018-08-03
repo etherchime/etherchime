@@ -17,3 +17,28 @@
 .carousel-item.is-active {
   visibility: visible;
 }
+
+.carousel-item-title {
+  z-index: 1;
+}
+
+.carousel-item-title h2 {
+  background: none;
+}
+
+@media screen and (min-width:1088px) {
+  .carousel-item-title h2 {
+    background: rgba(255,255,255,.7);
+  }
+
+  .carousel .audio-controller {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+  }
+
+  .carousel-navigation.is-overlay-desktop {
+    top: auto;
+  }
+}

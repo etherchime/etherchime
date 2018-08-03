@@ -49,18 +49,18 @@ class Story extends Component {
           <figure className="image is-16by9">
             <img src={this.props.imageUrl} alt={this.props.imageDescription} />
           </figure>
-          <div className="title is-grouped-centered content is-overlay">
-            <AudioController storyTitle={this.props.title} audioUrls={this.props.audioUrls} />
-          </div>
         </div>
         <div className="card-content">
           <div className="media">
             <div className="media-content">
               <h2 className="title is-4">{this.props.title}</h2>
               <p className="subtitle is-6">{this.props.description}</p>
-              <ul className="content level">
+              <ul className="content level is-mobile">
+                <div className="level-item level-left">
+                  <AudioController storyTitle={this.props.title} audioUrls={this.props.audioUrls} />
+                </div>
                 <div className="level-item level-right">
-                  <span>
+                  <span className="social-links">
                     <li className="is-inline has-text-grey-light"><i className="fa fa-lg fa-share"></i></li>&nbsp;
                     <li className="is-inline"><a title="Share on Twitter" aria-label="Share on Twitter" href={"https://twitter.com/home?status=" + "Check%20out%20this%20music%21%20" + window.location.protocol + "//" + window.location.host + "/music?story=" + this.props.alias + "%20%23etherchime"} target="_blank" rel="noopener noreferrer">
                       <i className="fab fa-2x fa-twitter-square"></i>

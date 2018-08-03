@@ -3,11 +3,8 @@ import './Stories.css';
 import Story from './Story';
 import StoriesData from './StoriesData.json';
 import CategoriesData from './Categories.json';
+import { mod } from './utilities';
 import qs from 'qs';
-
-function mod(n, m) {
-  return ((n % m) + m) % m;
-}
 
 class Stories extends Component {
   constructor() {

@@ -169,7 +169,7 @@ class AudioController extends Component {
 
 	render() {
 		return (
-			<p className="audio-controller buttons is-centered">
+			<div className="audio-controller buttons is-centered">
         {/*<a className="button" onClick={this.rewind}>
           <span className="icon is-small">
             <i className="fa fa-fast-forward fa-flip-horizontal"></i>
@@ -210,7 +210,7 @@ class AudioController extends Component {
             <i className="fa fa-download"></i>
           </span>
         </a>
-			</p>
+			</div>
 		);
 	}
 }
