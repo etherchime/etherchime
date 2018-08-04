@@ -69,7 +69,7 @@ class Home extends Component {
         <section className="section columns is-marginless has-background-grey-lighter is-0 is-vertically-centered">
           <div className="column has-text-centered">
             <h1 className="has-text-weight-normal is-size-4">
-              <p><a title="Search for music" aria-label="Search for music" role="button" href="" tabIndex="0" onClick={toggleStoryFilters} onKeyPress={(e) => { onEnter(e, toggleStoryFilters); }}>Find music for your project.</a></p>
+              <p><a title="Search for music" aria-label="Search for music" role="button" href="#" tabIndex="0" onClick={toggleStoryFilters} onKeyPress={(e) => { onEnter(e, toggleStoryFilters); }}>Find music for your project.</a></p>
             </h1>
           </div>
         </section>
