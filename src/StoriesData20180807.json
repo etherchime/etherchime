@@ -1,5 +1,18 @@
 [
 	{
+		"key": "Chimeric_Memories",
+		"releaseDate": "2018-08-08",
+		"audioUrls": [
+			"https://feeds.soundcloud.com/stream/482565063-etherchime-chimeric-memories.mp3", 
+			"https://www.mediafire.com/file/zlr384jqo1js8j5/Chimeric_Memories.wav/file"
+		],
+		"imageUrl": "https://farm2.staticflickr.com/1811/43867205962_90183d7dd5_b.jpg",
+		"imageDescription": "A yellow-green, birch forest obscures sunlight from a gently cascading river.",
+		"title": "Chimeric Memories",
+		"description": "The chimera's celestial memories cascade downriver, freed from the corrupted sage, but not without cost. In defeating its sage, the nature spirit of Nanta also released the chimera from this world.",
+		"tags": ["featured", "winter", "spring", "summer", "autumn", "games"]
+	}
+	,{
 		"key": "Sage_of_Summer",
 		"releaseDate": "2018-07-29",
 		"audioUrls": [
@@ -23,7 +36,7 @@
 		"imageDescription": "A water bottle lay perched against a daypack, overlooking a twilit river's bend.",
 		"title": "Ascent to Dream Aerie",
 		"description": "The trail guides a solitary hiker through the tail-end of summery twilight into autumn's crisp mornings. The ascent proves difficult, but wind threads the trees and accelerates this hiker's trek to a lookout.",
-		"tags": ["featured", "summer", "autumn", "games", "videos"]
+		"tags": ["summer", "autumn", "games", "videos"]
 	}
 	,{
 		"key": "Autumn_in_Nanta",

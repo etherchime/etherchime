@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Stories.css';
 import Story from './Story';
-import StoriesData from './StoriesData.json';
+import StoriesData from './StoriesData20180807.json';
 import CategoriesData from './Categories.json';
 import { mod } from './utilities';
 import qs from 'qs';
