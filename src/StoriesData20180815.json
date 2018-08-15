@@ -1,5 +1,18 @@
 [
 	{
+		"key": "Welcome_to_the_Regions",
+		"releaseDate": "2018-08-15",
+		"audioUrls": [
+			"https://feeds.soundcloud.com/stream/485676903-etherchime-welcome-to-the-regions.mp3", 
+			"http://www.mediafire.com/folder/d9fp6ut2sdc9w/Welcome_to_the_Regions"
+		],
+		"imageUrl": "https://farm2.staticflickr.com/1839/43320800404_f720e3824f_b.jpg",
+		"imageDescription": "An alpine lake basks in irridescent light below a peak that obscures the rising sun.",
+		"title": "Welcome to the Regions",
+		"description": "Paddling the Great River, the nature spirit of Nanta discovers natural wonders such as Roan's snowy, spruce-fir forests and Lauke's monolithic, alpine peaks. Welcome players to your game's regions with familiar, yet varied intro music.",
+		"tags": ["featured", "winter", "spring", "summer", "autumn", "games"]
+	}
+	,{
 		"key": "Chimeric_Memories",
 		"releaseDate": "2018-08-08",
 		"audioUrls": [
@@ -7,10 +20,10 @@
 			"https://www.mediafire.com/file/zlr384jqo1js8j5/Chimeric_Memories.wav/file"
 		],
 		"imageUrl": "https://farm2.staticflickr.com/1811/43867205962_90183d7dd5_b.jpg",
-		"imageDescription": "A yellow-green, birch forest obscures sunlight from a gently cascading river.",
+		"imageDescription": "Water and celestial magic spray into the air while cascading down a forested gorge.",
 		"title": "Chimeric Memories",
 		"description": "The chimera's celestial memories cascade downriver, freed from the corrupted sage, but not without cost. In defeating its sage, the nature spirit of Nanta also released the chimera from this world.",
-		"tags": ["featured", "winter", "spring", "summer", "autumn", "games"]
+		"tags": ["winter", "spring", "summer", "autumn", "games"]
 	}
 	,{
 		"key": "Sage_of_Summer",
