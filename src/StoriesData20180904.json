@@ -1,5 +1,18 @@
 [
   {
+    "key": "Dawn_Elsewhere",
+    "releaseDate": "2018-09-04",
+    "audioUrls": [
+      "https://feeds.soundcloud.com/stream/494866155-etherchime-dawn-elsewhere.mp3", 
+      "https://www.mediafire.com/file/creqmezqmvooe4o/Dawn_Elsewhere.wav/file"
+    ],
+    "imageUrl": "https://farm2.staticflickr.com/1894/43550339145_5be1cb4479_b.jpg",
+    "imageDescription": "Pre-dawn twilight illuminates the sea, above which the moon hovers.",
+    "title": "Dawn Elsewhere",
+    "description": "Since fleeing the astral nature that devastated Nanta, a kigo (nature spirit) has adventured downriver with its otter-like, chimeric companion. After many seasons in the mountains, this kigo now finds itself alone at the coast, embarking from an irreparable world in search of a new adventure.",
+    "tags": ["featured", "summer", "autumn", "games", "videos"]
+  }
+  ,{
     "key": "Cardinal_Wind",
     "releaseDate": "2018-08-27",
     "audioUrls": [
@@ -10,7 +23,7 @@
     "imageDescription": "Wind spirals into a red forest, its changed leaves decorating the ground.",
     "title": "Cardinal Wind",
     "description": "Fall woods beckon the hiker with crisp air and red leaves—a domain for contentment and reflection—while technology grasps for the hiker's attention like gnarled rhododendron bushes.",
-    "tags": ["featured", "autumn", "games", "videos", "meditation"]
+    "tags": ["autumn", "games", "videos", "meditation"]
   }
 	,{
 		"key": "Welcome_to_the_Regions",
