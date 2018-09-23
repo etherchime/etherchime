@@ -55,6 +55,14 @@ export function showStoryFilters(e) {
 
   var appContainer = document.getElementById("appContainer");
   appContainer.classList.add("is-four-fifths-desktop");
+
+  (function smoothscroll(){
+    var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+    if (currentScroll > 0) {
+         window.requestAnimationFrame(smoothscroll);
+         window.scrollTo (0,currentScroll - (currentScroll/5));
+    }
+  })();
 }
 
 export function hideStoryFilters(e) {

@@ -34,7 +34,7 @@ class AudioController extends Component {
   }
 
   play(e) {
-    e.preventDefault();
+    // e.preventDefault();
 
     // Use the the click version of this function should user hit enter.
     var key = e.which || e.keyCode;

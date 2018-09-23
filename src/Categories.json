@@ -16,14 +16,6 @@
     "tags": ["featured"]
   }
   ,{
-    "key": "meditation",
-    "name": "Meditative Practices",
-    "tagline": "Elevate your awareness with music that resonates emotions.",
-    "features": ["emotional indulgence", "relaxed melodies", "ambient soundscapes"],
-    "icon": "fa-spa",
-    "tags": ["featured"]
-  }
-  ,{
     "key": "anything",
     "name": "Anything",
     "tagline": "Explore soundtracks for a variety of needs.",

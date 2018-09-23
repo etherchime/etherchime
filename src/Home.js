@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Home.css';
 import FeaturedStories from './FeaturedStories';
 import CategoriesData from './Categories.json';
-import { toggleStoryFilters, onEnter } from './utilities';
+import { showStoryFilters, onEnter } from './utilities';
 
 class Home extends Component {
   constructor(props) {
@@ -57,7 +57,7 @@ class Home extends Component {
         <section className="section is-medium columns is-marginless has-background-grey-lighter is-0 is-vertically-centered">
           <div className="column is-5">
             <h1 className="has-text-weight-normal is-size-4">
-              Music for <a title="Learn about music for video games" aria-label="Learn about music for video games" href="#musicFor-games">video games</a>, <a title="Learn about music for video productions" aria-label="Learn about music for video productions" href="#musicFor-videos">video productions</a>, and <a title="Learn about music for video games" aria-label="Learn about music for meditative practices" href="#musicFor-meditation">meditative practices</a> - composed by Brandon Shewmake.
+              Music for <a title="Learn about music for video games" aria-label="Learn about music for video games" href="#musicFor-games">video games</a> and <a title="Learn about music for video productions" aria-label="Learn about music for video productions" href="#musicFor-videos">video productions</a> - composed by Brandon Shewmake.
             </h1><br />
             <p className="content is-size-4">Find free music for your project licensed under <a href="https://creativecommons.org/licenses/by-nd/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons BY-ND 4.0</a>, or request original compositions by <a href="/contact">contacting me</a>.</p>
           </div>
@@ -69,7 +69,7 @@ class Home extends Component {
         <section className="section columns is-marginless has-background-grey-lighter is-0 is-vertically-centered">
           <div className="column has-text-centered">
             <h1 className="has-text-weight-normal is-size-4">
-              <p><a title="Search for music" aria-label="Search for music" role="button" href="#" tabIndex="0" onClick={toggleStoryFilters} onKeyPress={(e) => { onEnter(e, toggleStoryFilters); }}>Find music for your project.</a></p>
+              <p><a title="Search for music" aria-label="Search for music" role="button" href="#" tabIndex="0" onClick={showStoryFilters} onKeyPress={(e) => { onEnter(e, showStoryFilters); }}>Find music for your project.</a></p>
             </h1>
           </div>
         </section>
