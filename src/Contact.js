@@ -13,7 +13,7 @@ class Contact extends Component {
       <section className="contact section columns is-marginless is-large has-background-grey-lighter">
         <div className="container column is-two-fifths is-narrow">
           <p className="content is-size-4">
-            All compositions featured on this website are free-to-use under <a href="https://creativecommons.org/licenses/by-nd/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons BY-ND 4.0</a>, but I would be glad to compose music specifically for your project. For inquiries about my composition services and anything else, please reach me on <a href="https://www.instagram.com/etherchime/" target="_blank" rel="noopener noreferrer">Instagram</a> or via <a href="mailto:etherchime@gmail.com">etherchime@gmail.com</a>.
+            All compositions featured on this website are free-to-use under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons BY 4.0</a>, but I would be glad to compose music specifically for your project. For inquiries about my composition services and anything else, please reach me on <a href="https://www.instagram.com/etherchime/" target="_blank" rel="noopener noreferrer">Instagram</a> or via <a href="mailto:etherchime@gmail.com">etherchime@gmail.com</a>.
           </p>
           {/*<form method="post" action="/contactengine.php" id="contactForm">
             <div className="field">
