@@ -1,5 +1,18 @@
 [
   {
+    "key": "Commanding_the_High_Seas",
+    "releaseDate": "2018-10-17",
+    "audioUrls": [
+      "https://feeds.soundcloud.com/stream/515439111-etherchime-commanding-the-high-seas.mp3", 
+      "https://www.mediafire.com/file/35gr7q58hq9jzub/Commanding_the_High_Seas.wav/file"
+    ],
+    "imageUrl": "https://farm2.staticflickr.com/1911/45382466601_85b446d74a_b.jpg",
+    "imageDescription": "An isolated, evergreen isle extends into the ocean.",
+    "title": "Commanding the High Seas",
+    "description": "Sailing the high seas' monolithic swells gives a crew of corsairs momentum in battle and the skill to access isolated isles. As much as these seafarers enjoy adrenaline, they enjoy pairing strings with horns and percussion.",
+    "tags": ["featured", "summer", "spring", "games", "videos"]
+  }
+  ,{
     "key": "Dawn_Elsewhere",
     "releaseDate": "2018-09-04",
     "audioUrls": [
@@ -36,7 +49,7 @@
 		"imageDescription": "An alpine lake basks in irridescent light below a peak that obscures the rising sun.",
 		"title": "Welcome to the Regions",
 		"description": "Paddling the Great River, the nature spirit of Nanta discovers natural wonders such as Roan's snowy, spruce-fir forests and Lauke's monolithic, alpine peaks. Welcome players to your game's regions with familiar, yet varied intro music.",
-		"tags": ["featured", "winter", "spring", "summer", "autumn", "games"]
+		"tags": ["winter", "spring", "summer", "autumn", "games"]
 	}
 	,{
 		"key": "Chimeric_Memories",
