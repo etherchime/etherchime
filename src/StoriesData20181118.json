@@ -1,5 +1,18 @@
 [
   {
+    "key": "Early_Frost",
+    "releaseDate": "2018-11-18",
+    "audioUrls": [
+      "https://feeds.soundcloud.com/stream/531673470-etherchime-early-frost.mp3", 
+      "https://www.mediafire.com/file/2brgco85ttoquq2/Early_Frost.wav/file"
+    ],
+    "imageUrl": "https://farm5.staticflickr.com/4842/32064472588_cf9b0d98a3_b.jpg",
+    "imageDescription": "Frost rests upon pink blossoms and their overgrown bush.",
+    "title": "Early Frost",
+    "description": "A nocturnal chill stole the last, autumnal breath from a Japanese forest's brush, but dawn revealed new life: early, winter blossoms painted with the season's first frost.",
+    "tags": ["featured", "autumn", "winter", "games", "videos"]
+  }
+  ,{
     "key": "Commanding_the_High_Seas",
     "releaseDate": "2018-10-17",
     "audioUrls": [
@@ -75,7 +88,7 @@
 		"imageDescription": "A yellow-green, birch forest obscures sunlight from a gently cascading river.",
 		"title": "Sage of Summer",
 		"description": "A nature-spirit chases its corrupted sage downriver, skirting this sage's heated boils of water. The insectoid Sage of Summer draws its celestial power from an escaped chimera that takes the form a black bear.",
-		"tags": ["featured", "summer", "games"]
+		"tags": ["summer", "games"]
 	}
 	,{
 		"key": "Ascent_to_Dream_Aerie",
