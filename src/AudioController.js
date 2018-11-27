@@ -1,218 +1,145 @@
-import { Howl, Howler } from 'howler';
-import React, { Component } from 'react';
+import React from 'react';
 import './AudioController.css';
 
-class AudioController extends Component {
-  constructor(props) {
-    super(props);
+export function play(storyKey, stories) {
+  let allStories = stories.slice();
+  let thisStory = allStories.find(s => s.key === storyKey);
 
-    this.state = {
-      playRef: React.createRef(),
-      pauseRef: React.createRef(),
-      stopRef: React.createRef(),
-      storyTitle: props.storyTitle,
-      volumeLevel: 0.5,
-      audio: new Howl({
-        src: [ props.audioUrls[0] ],
-        format: ['wav'],
-        autoplay: false,
-        loop: true,
-        volume: 1
-      }),
-      playId: null,
-      html5: true,
-      audioUrls: props.audioUrls
-    };
+  // Return if already playing.
+  if (thisStory.isPlaying === true) return allStories;
 
-    this.play = this.play.bind(this);
-    this.pause = this.pause.bind(this);
-    this.stop = this.stop.bind(this);
-    //this.rewind = this.rewind.bind(this);
-    //this.fastForward = this.fastForward.bind(this);
-    this.soften = this.soften.bind(this);
-    this.louden = this.louden.bind(this);
-  }
+  // Stop all other stories' music.
+  allStories.forEach((story, index) => {
+    if (story.key === storyKey) return;
 
-  play(e) {
-    // e.preventDefault();
+    story.audio.stop();
+    story.isPlaying = false;
+  });
 
-    // Use the the click version of this function should user hit enter.
-    var key = e.which || e.keyCode;
-    if (key === 13)  {
-      e.target.click();
-      return
-    }
+  // Play this story's music.
+  thisStory.audio.play();
+  thisStory.isPlaying = true;
 
-    var thisPlayId = this.state.playId;
-    Howler._howls
-      .filter(function(howl, index) {
-        return howl._sounds[0]._id !== thisPlayId;
-      }).forEach(howl => howl.stop());
+  return allStories;
+}
 
-    var playButtons = document.getElementsByClassName("button-play");
-    [].forEach.call(playButtons, function(p) { p.classList.remove("is-hidden"); });
+export function pause(storyKey, stories) {
+  let allStories = stories.slice();
+  let thisStory = allStories.find(s => s.key === storyKey);
 
-    var pauseButtons = document.getElementsByClassName("button-pause");
-    [].forEach.call(pauseButtons, function(p) { p.classList.add("is-hidden"); });
+  // Return if already paused.
+  if (thisStory.isPlaying === false) return allStories;
 
-    var stopButtons = document.getElementsByClassName("button-stop");
-    [].forEach.call(stopButtons, function(p) { p.classList.add("is-hidden"); });
+  // Pause this story's music.
+  thisStory.audio.pause();
+  thisStory.isPlaying = false;
 
-    this.state.playRef.current.classList.add("is-hidden");
-    this.state.pauseRef.current.classList.remove("is-hidden");
-    this.state.stopRef.current.classList.remove("is-hidden");
+  return allStories;
+}
 
-    // Return if already playing.
-    if (this.state.audio && 
-        this.state.audio != null && 
-        this.state.audio.playing()) return;
+export function stop(storyKey, stories) {
+  let allStories = stories.slice();
+  let thisStory = allStories.find(s => s.key === storyKey);
 
-    this.setState({
-      playId: this.state.audio.play()
-    });
-  }
+  // Stop this story's music.
+  thisStory.audio.stop();
+  thisStory.isPlaying = false;
 
-  pause(e) {
-    e.preventDefault();
+  return allStories;
+}
 
-    // Use the the click version of this function should user hit enter.
-    var key = e.which || e.keyCode;
-    if (key === 13)  {
-      e.target.click();
-      return
-    }
+// soften(e) {
+//   e.preventDefault();
 
-    this.state.audio.pause();
+//   // Use the the click version of this function should user hit enter.
+//   var key = e.which || e.keyCode;
+//   if (key === 13)  {
+//     e.target.click();
+//     return
+//   }
+  
+//   var softenButtons = document.getElementsByClassName("button-soften");
+//   if (this.state.volumeLevel <= 0.0) {
+//     [].forEach.call(softenButtons, function(s) { s.setAttribute("disabled", "disabled"); });
+//     return;
+//   }
+//   [].forEach.call(softenButtons, function(s) { s.removeAttribute("disabled"); });
+//   var loudenButtons = document.getElementsByClassName("button-louden");
+//   [].forEach.call(loudenButtons, function(l) { l.removeAttribute("disabled"); });
 
-    this.state.playRef.current.classList.remove("is-hidden");
-    this.state.pauseRef.current.classList.add("is-hidden");
-  }
+//   this.setState((prevState) => {
+//     var newVolume = (prevState.volumeLevel * 10 - 1) / 10;
+//     Howler.volume(newVolume);
+//     return { volumeLevel: newVolume }
+//   });
+// }
 
-  stop(e) {
-    e.preventDefault();
+// louden(e) {
+//   e.preventDefault();
+  
+//   // Use the the click version of this function should user hit enter.
+//   var key = e.which || e.keyCode;
+//   if (key === 13)  {
+//     e.target.click();
+//     return
+//   }
 
-    // Use the the click version of this function should user hit enter.
-    var key = e.which || e.keyCode;
-    if (key === 13)  {
-      e.target.click();
-      return
-    }
+//   var loudenButtons = document.getElementsByClassName("button-louden");
+//   if (this.state.volumeLevel >= 1.0) {
+//     [].forEach.call(loudenButtons, function(l) { l.setAttribute("disabled", "disabled"); });
+//     return;
+//   }
+//   [].forEach.call(loudenButtons, function(l) { l.removeAttribute("disabled"); });
+//   var softenButtons = document.getElementsByClassName("button-soften");
+//   [].forEach.call(softenButtons, function(s) { s.removeAttribute("disabled"); });
+  
+//   this.setState((prevState) => {
+//     var newVolume = (prevState.volumeLevel * 10 + 1) / 10;
+//     Howler.volume(newVolume);
+//     return { volumeLevel: newVolume }
+//   });
+// }
 
-    this.state.audio.stop();
-
-    this.state.playRef.current.classList.remove("is-hidden");
-    this.state.pauseRef.current.classList.add("is-hidden");
-    this.state.stopRef.current.classList.add("is-hidden");
-  }
-
-  /*rewind(e) {
-    e.preventDefault();
-    console.log('The link was clicked.');
-  }*/
-
-  /*fastForward(e) {
-    e.preventDefault();
-    console.log('The link was clicked.');
-  }*/
-
-  soften(e) {
-    e.preventDefault();
-
-    // Use the the click version of this function should user hit enter.
-    var key = e.which || e.keyCode;
-    if (key === 13)  {
-      e.target.click();
-      return
-    }
-    
-    var softenButtons = document.getElementsByClassName("button-soften");
-    if (this.state.volumeLevel <= 0.0) {
-      [].forEach.call(softenButtons, function(s) { s.setAttribute("disabled", "disabled"); });
-      return;
-    }
-    [].forEach.call(softenButtons, function(s) { s.removeAttribute("disabled"); });
-    var loudenButtons = document.getElementsByClassName("button-louden");
-    [].forEach.call(loudenButtons, function(l) { l.removeAttribute("disabled"); });
-
-    this.setState((prevState) => {
-      var newVolume = (prevState.volumeLevel * 10 - 1) / 10;
-      Howler.volume(newVolume);
-      return { volumeLevel: newVolume }
-    });
-  }
-
-  louden(e) {
-    e.preventDefault();
-    
-    // Use the the click version of this function should user hit enter.
-    var key = e.which || e.keyCode;
-    if (key === 13)  {
-      e.target.click();
-      return
-    }
-
-    var loudenButtons = document.getElementsByClassName("button-louden");
-    if (this.state.volumeLevel >= 1.0) {
-      [].forEach.call(loudenButtons, function(l) { l.setAttribute("disabled", "disabled"); });
-      return;
-    }
-    [].forEach.call(loudenButtons, function(l) { l.removeAttribute("disabled"); });
-    var softenButtons = document.getElementsByClassName("button-soften");
-    [].forEach.call(softenButtons, function(s) { s.removeAttribute("disabled"); });
-    
-    this.setState((prevState) => {
-      var newVolume = (prevState.volumeLevel * 10 + 1) / 10;
-      Howler.volume(newVolume);
-      return { volumeLevel: newVolume }
-    });
-  }
-
-	render() {
-		return (
-			<div className="audio-controller buttons is-centered">
-        {/*<a className="button" onClick={this.rewind}>
-          <span className="icon is-small">
-            <i className="fa fa-fast-forward fa-flip-horizontal"></i>
-          </span>
-        </a>*/}
-			  <a ref={this.state.playRef} title={"Play " + this.state.storyTitle} aria-label={"Play " + this.state.storyTitle} className="button-play button" tabIndex="0" onClick={this.play} onKeyPress={this.play}>
-			    <span className="icon is-small">
-			      <i className="fa fa-play"></i>
-			    </span>
-			  </a>
-        <a ref={this.state.pauseRef} title={"Pause " + this.state.storyTitle} aria-label={"Pause " + this.state.storyTitle} className="button-pause button is-hidden" tabIndex="0" onClick={this.pause} onKeyPress={this.pause}>
-          <span className="icon is-small">
-            <i className="fa fa-pause"></i>
-          </span>
-        </a>
-        <a ref={this.state.stopRef} title={"Stop " + this.state.storyTitle} aria-label={"Stop " + this.state.storyTitle} className="button-stop button is-hidden" tabIndex="0" onClick={this.stop} onKeyPress={this.stop}>
-          <span className="icon is-small">
-            <i className="fa fa-stop"></i>
-          </span>
-        </a>
-			  {/*<a className="button" onClick={this.fastForward}>
-			    <span className="icon is-small">
-			      <i className="fa fa-fast-forward"></i>
-			    </span>
-			  </a>*/}
-        {/*<a title="Decrease music volume" aria-label="Decrease music volume" className="button-soften button" tabIndex="0" onClick={this.soften} onKeyPress={this.soften}>
-          <span className="icon is-small">
-            <i className="fa fa-volume-down"></i>
-          </span>
-        </a>
-        <a title="Increase music volume" aria-label="Increase music volume" className="button-louden button" tabIndex="0" onClick={this.louden} onKeyPress={this.louden}>
-          <span className="icon is-small">
-            <i className="fa fa-volume-up"></i>
-          </span>
-        </a>*/}
-        <a title={"Download " + this.state.storyTitle} aria-label={"Download " + this.state.storyTitle} className="button" tabIndex="0" href={this.state.audioUrls[1]} target="_blank" download={this.state.title}>
-          <span className="icon is-small">
-            <i className="fa fa-download"></i>
-          </span>
-        </a>
-			</div>
-		);
-	}
+function AudioController(props) {
+	return (
+		<div className="audio-controller buttons is-centered">
+      {/*<a className="button" onClick={this.rewind}>
+        <span className="icon is-small">
+          <i className="fa fa-fast-forward fa-flip-horizontal"></i>
+        </span>
+      </a>*/}
+		  <a title={"Play " + props.storyTitle} aria-label={"Play " + props.storyTitle} className={"button-play button" + (props.isPlaying === false ? "" : " is-hidden")} tabIndex="0" onClick={(e) => props.play(e)} onKeyPress={(e) => props.play(e)}>
+		    <span className="icon is-small">
+		      <i className="fa fa-play"></i>
+		    </span>
+		  </a>
+      <a title={"Pause " + props.storyTitle} aria-label={"Pause " + props.storyTitle} className={"button-pause button" + (props.isPlaying === true ? "" : " is-hidden")} tabIndex="0" onClick={(e) => props.pause(e)} onKeyPress={(e) => props.pause(e)}>
+        <span className="icon is-small">
+          <i className="fa fa-pause"></i>
+        </span>
+      </a>
+      <a title={"Stop " + props.storyTitle} aria-label={"Stop " + props.storyTitle} className={"button-stop button" + (props.isPlaying === true ? "" : " is-hidden")} tabIndex="0" onClick={(e) => props.stop(e)} onKeyPress={(e) => props.stop(e)}>
+        <span className="icon is-small">
+          <i className="fa fa-stop"></i>
+        </span>
+      </a>
+      {/*<a title="Decrease music volume" aria-label="Decrease music volume" className="button-soften button" tabIndex="0" onClick={(e) => props.soften(e)} onKeyPress={(e) => props.soften(e)}>
+        <span className="icon is-small">
+          <i className="fa fa-volume-down"></i>
+        </span>
+      </a>
+      <a title="Increase music volume" aria-label="Increase music volume" className="button-louden button" tabIndex="0" onClick={(e) => props.louden(e)} onKeyPress={(e) => props.louden(e)}>
+        <span className="icon is-small">
+          <i className="fa fa-volume-up"></i>
+        </span>
+      </a>*/}
+      <a title={"Download " + props.storyTitle} aria-label={"Download " + props.storyTitle} className="button" tabIndex="0" href={props.downloadUrl} target="_blank">
+        <span className="icon is-small">
+          <i className="fa fa-download"></i>
+        </span>
+      </a>
+		</div>
+	);
 }
 
 export default AudioController;

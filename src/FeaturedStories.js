@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import './FeaturedStories.css';
 import bulmaCarousel from 'bulma-carousel';
-import AudioController from './AudioController';
+import FeaturedStory from './FeaturedStory';
+import AudioController, { play, pause, stop } from './AudioController';
 import StoriesData from './StoriesData20181118.json';
-import { onEnter, mod } from './utilities';
+import { onEnter } from './utilities';
+import { Howl } from 'howler';
 
 class FeaturedStories extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       stories: [],
       storyIndex: 0
@@ -17,19 +20,26 @@ class FeaturedStories extends Component {
     this.navigateEast = this.navigateEast.bind(this);
   }
 
-  componentWillMount()
-  {
+  componentWillMount() {
     this.setState({ 
       stories: StoriesData.filter(function(story, index) {
         if (!story.tags || story.tags.length === 0) return false;
+
+        story.audio = new Howl({
+          src: [ story.audioUrls[0] ],
+          format: ['wav'],
+          autoplay: false,
+          loop: true,
+          volume: 1
+        });
+        story.isPlaying = false;
 
         return story.tags.indexOf("featured") !== -1;
       })
     });
   }
 
-  componentDidMount()
-  {
+  componentDidMount() {
     bulmaCarousel.attach();
 
     this.setState((prevState) => {
@@ -63,20 +73,45 @@ class FeaturedStories extends Component {
     });
   }
 
+  actionUpdate(e, storyKey, action) {
+    e.preventDefault();
+
+    // Use the the click version of this function should user hit enter.
+    var key = e.which || e.keyCode;
+    if (key === 13)  {
+      e.target.click();
+      return
+    }
+
+    var updatedStories = action(storyKey, this.state.stories);
+
+    this.setState({
+      stories: updatedStories
+    });
+  }
+
   render() {
     var currentStory = this.state.stories[this.state.storyIndex];
-    //var audioController = currentStory && currentStory != null ? <AudioController storyTitle={currentStory.title} audioUrls={currentStory.audioUrls} /> : null;
     var carouselItems = this.state.stories.map((story, index) => {
       return (
-        <React.Fragment key={"featured-" + story.key}>
-          <div className='carousel-item has-background' key={"featured-stories-" + story.key}>
-            <img className="is-background" src={story.imageUrl} alt={story.imageDescription} width="800" height="450" />
-          </div>
-        </React.Fragment>
+        <FeaturedStory
+          storyKey={story.key}
+          imageUrl={story.imageUrl}
+          imageDescription={story.imageDescription} />
       );
     });
     var audioControllers = this.state.stories.map((story, index) => {
-        return <span className={(this.state.storyIndex === index) ? "" : "is-hidden"}><AudioController storyTitle={story.title} audioUrls={story.audioUrls} /></span>
+        return (
+          <span className={(this.state.storyIndex === index) ? "" : "is-hidden"}>
+            <AudioController 
+              storyTitle={story.title}
+              play={(e) => this.actionUpdate(e, story.key, play)}
+              pause={(e) => this.actionUpdate(e, story.key, pause)}
+              stop={(e) => this.actionUpdate(e, story.key, stop)}
+              downloadUrl={story.audioUrls[1]}
+              isPlaying={story.isPlaying} />
+          </span>
+        );
     });
 
     return (

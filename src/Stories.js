@@ -1,4 +1,6 @@
+import { Howl } from 'howler';
 import React, { Component } from 'react';
+import { play, pause, stop } from './AudioController';
 import './Stories.css';
 import Story from './Story';
 import StoriesData from './StoriesData20181118.json';
@@ -7,12 +9,17 @@ import { mod } from './utilities';
 import qs from 'qs';
 
 class Stories extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     
     this.state = {
-      stories: []
+      category: null,
+      isFilteredToStory: false,
+      storyRows: []
     };
+
+    this.actionUpdate = this.actionUpdate.bind(this);
+    this.formatStories = this.formatStories.bind(this);
   }
 
   componentWillMount() {
@@ -27,6 +34,36 @@ class Stories extends Component {
     this.setState({
       category: category
     });
+  }
+
+  formatStories(stories, isNew) {
+    let storyRows = [];
+    const columnsNo = 3;
+    stories.forEach((story, index) => {
+      if (isNew === true) {
+        story.audio = new Howl({
+          src: [ story.audioUrls[0] ],
+          format: ['wav'],
+          autoplay: false,
+          loop: true,
+          volume: 1
+        });
+        story.isPlaying = false;
+      }
+
+      var count = index + 1;
+      var remainderNo = mod(count, columnsNo);
+      var remainingNo = stories.length - index;
+      if (remainderNo === 0) {
+        var storyRow = stories.slice(count - columnsNo, count);
+        storyRows.push(storyRow);
+      } else if (remainingNo < columnsNo && columnsNo - remainderNo > 1) {
+        var remainder = stories.splice(index, stories.length - index);
+        storyRows.push(remainder);
+      }
+    });
+
+    return storyRows;
   }
 
   componentDidMount() {
@@ -61,29 +98,35 @@ class Stories extends Component {
       document.title = storiesData[0].title + " - Royalty-Free Music - Etherchime";
     }
 
-    let storyRows = [];
-    const columnsNo = 3;
-    storiesData.forEach((story, index) => {
-      var count = index + 1;
-      var remainderNo = mod(count, columnsNo);
-      var remainingNo = storiesData.length - index;
-      if (remainderNo === 0) {
-        var storyRow = storiesData.slice(count - columnsNo, count);
-        storyRows.push(storyRow);
-      } else if (remainingNo < columnsNo && columnsNo - remainderNo > 1) {
-        var remainder = storiesData.splice(index, storiesData.length - index);
-        storyRows.push(remainder);
-      }
-    });
+    let storyRows = this.formatStories(storiesData, true);
 
     this.setState({
-      stories: storyRows
+      storyRows: storyRows
+    });
+  }
+
+  actionUpdate(e, storyKey, action) {
+    e.preventDefault();
+
+    // Use the the click version of this function should user hit enter.
+    var key = e.which || e.keyCode;
+    if (key === 13)  {
+      e.target.click();
+      return
+    }
+
+    let allStories = [].concat.apply([], this.state.storyRows);
+
+    var updatedStories = action(storyKey, allStories);
+
+    this.setState({
+      storyRows: this.formatStories(updatedStories, false)
     });
   }
 
   render() {
     var stories =
-      this.state.stories.map((storyRow, index) => {
+      this.state.storyRows.map((storyRow, index) => {
         return (
           <div key={"stories-row-" + index} className="columns is-multiline">
             {storyRow.map(story => {
@@ -94,6 +137,11 @@ class Stories extends Component {
                     audioUrls={story.audioUrls}
                     imageUrl={story.imageUrl}
                     imageDescription={story.imageDescription}
+                    play={(e) => this.actionUpdate(e, story.key, play)}
+                    pause={(e) => this.actionUpdate(e, story.key, pause)}
+                    stop={(e) => this.actionUpdate(e, story.key, stop)}
+                    downloadUrl={story.audioUrls[1]}
+                    isPlaying={story.isPlaying}
                     title={story.title}
                     description={story.description}
                     />
@@ -131,7 +179,7 @@ class Stories extends Component {
           </div>
         </section>
         <section className="section">
-          {this.state.stories && this.state.stories.length > 0 ? stories : noStories}
+          {this.state.storyRows && this.state.storyRows.length > 0 ? stories : noStories}
         </section>
       </section>
     );
