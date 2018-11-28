@@ -3,8 +3,8 @@ import './FeaturedStory.css';
 
 function FeaturedStory(props) {
   return (
-    <React.Fragment key={"featured-" + props.storyKey}>
-      <div className='carousel-item has-background' key={"featured-stories-" + props.storyKey}>
+    <React.Fragment>
+      <div className='carousel-item has-background'>
         <img className="is-background" src={props.imageUrl} alt={props.imageDescription} width="800" height="450" />
       </div>
     </React.Fragment>

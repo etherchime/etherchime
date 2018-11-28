@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './Home.css';
 import FeaturedStories from './FeaturedStories';
 import CategoriesData from './Categories.json';
-import { showStoryFilters, onEnter } from './utilities';
 
 class Home extends Component {
   constructor(props) {
@@ -11,8 +10,7 @@ class Home extends Component {
     document.title = "Royalty-Free Music - Etherchime";
   }
 
-  componentWillMount()
-  {
+  componentWillMount() {
     this.setState({ categories: CategoriesData.filter(function(category, index) {
       if (!category.tags || category.tags.length === 0) return false;
 
@@ -66,13 +64,6 @@ class Home extends Component {
           </div>
         </section>
         {categories}
-        <section className="section columns is-marginless has-background-grey-lighter is-0 is-vertically-centered">
-          <div className="column has-text-centered">
-            <h1 className="has-text-weight-normal is-size-4">
-              <p><a title="Search for music" aria-label="Search for music" role="button" href="#" tabIndex="0" onClick={showStoryFilters} onKeyPress={(e) => { onEnter(e, showStoryFilters); }}>Find music for your project.</a></p>
-            </h1>
-          </div>
-        </section>
       </React.Fragment>
     );
   }

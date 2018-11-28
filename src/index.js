@@ -6,20 +6,17 @@ import 'bulma-carousel/dist/css/bulma-carousel.min.css';
 import 'bulma-carousel/dist/js/bulma-carousel.min.js';
 import './index.css';
 import App from './App';
-import Nav from './Nav';
 import Home from './Home';
 import Stories from './Stories';
 import About from './About';
 import Contact from './Contact';
-import Footer from './Footer';
-import Aside from './Aside';
 import { unregister } from './registerServiceWorker';
+import '@babel/polyfill';
 
 window.FontAwesomeConfig = {
   searchPseudoElements: true
 };
 ReactDOM.render(<App />, document.getElementById("appRoot"));
-ReactDOM.render(<Nav />, document.getElementById("navRoot"));
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
@@ -30,8 +27,5 @@ ReactDOM.render(
     </Switch>
   </BrowserRouter>,
   document.getElementById("mainRoot"));
-ReactDOM.render(<Footer />, document.getElementById("footerRoot"));
-ReactDOM.render(<Aside />, document.getElementById("asideRootTouch"));
-ReactDOM.render(<Aside />, document.getElementById("asideRootDesktop"));
 
 unregister();

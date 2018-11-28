@@ -96,14 +96,14 @@ class FeaturedStories extends Component {
     var carouselItems = this.state.stories.map((story, index) => {
       return (
         <FeaturedStory
-          storyKey={story.key}
+          key={"featured-stories-" + story.key}
           imageUrl={story.imageUrl}
           imageDescription={story.imageDescription} />
       );
     });
     var audioControllers = this.state.stories.map((story, index) => {
         return (
-          <span className={(this.state.storyIndex === index) ? "" : "is-hidden"}>
+          <span className={(this.state.storyIndex === index) ? "" : "is-hidden"} key={"featured-audio-" + story.key}>
             <AudioController 
               title={story.title}
               play={(e) => this.actionUpdate(e, story.key, play)}

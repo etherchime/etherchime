@@ -4,8 +4,9 @@ import './Aside.css';
 import CategoriesData from './Categories';
 
 class Aside extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+
     this.state = {
       categories: []
     };
