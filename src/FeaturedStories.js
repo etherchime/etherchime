@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './FeaturedStories.css';
 import bulmaCarousel from 'bulma-carousel';
 import FeaturedStory from './FeaturedStory';
-import AudioController, { play, pause, stop } from './AudioController';
+import AudioController, { play, pause, stop, soften, louden } from './AudioController';
 import StoriesData from './StoriesData20181118.json';
 import { onEnter } from './utilities';
 import { Howl } from 'howler';
@@ -30,9 +30,10 @@ class FeaturedStories extends Component {
           format: ['wav'],
           autoplay: false,
           loop: true,
-          volume: 1
+          volume: 0.8
         });
         story.isPlaying = false;
+        story.volume = 0.8;
 
         return story.tags.indexOf("featured") !== -1;
       })
@@ -104,12 +105,15 @@ class FeaturedStories extends Component {
         return (
           <span className={(this.state.storyIndex === index) ? "" : "is-hidden"}>
             <AudioController 
-              storyTitle={story.title}
+              title={story.title}
               play={(e) => this.actionUpdate(e, story.key, play)}
               pause={(e) => this.actionUpdate(e, story.key, pause)}
               stop={(e) => this.actionUpdate(e, story.key, stop)}
+              soften={(e) => this.actionUpdate(e, story.key, soften)}
+              louden={(e) => this.actionUpdate(e, story.key, louden)}
               downloadUrl={story.audioUrls[1]}
-              isPlaying={story.isPlaying} />
+              isPlaying={story.isPlaying}
+              volume={story.volume} />
           </span>
         );
     });

@@ -19,14 +19,15 @@ function Story(props) {
             <ul className="content level is-mobile">
               <div className="level-item level-left">
                 <AudioController 
-                  storyTitle={props.title} 
+                  title={props.title} 
                   play={props.play}
                   pause={props.pause}
                   stop={props.stop}
                   soften={props.soften}
                   louden={props.louden}
                   downloadUrl={props.downloadUrl}
-                  isPlaying={props.isPlaying} />
+                  isPlaying={props.isPlaying}
+                  volume={props.volume} />
               </div>
               <div className="level-item level-right">
                 <span className="social-links">

@@ -1,6 +1,6 @@
 import { Howl } from 'howler';
 import React, { Component } from 'react';
-import { play, pause, stop } from './AudioController';
+import { play, pause, stop, soften, louden } from './AudioController';
 import './Stories.css';
 import Story from './Story';
 import StoriesData from './StoriesData20181118.json';
@@ -46,9 +46,10 @@ class Stories extends Component {
           format: ['wav'],
           autoplay: false,
           loop: true,
-          volume: 1
+          volume: 0.8
         });
         story.isPlaying = false;
+        story.volume = 0.8;
       }
 
       var count = index + 1;
@@ -134,16 +135,18 @@ class Stories extends Component {
                 <div key={"stories-" + story.key} className="column is-one-third">
                   <Story 
                     alias={story.key}
-                    audioUrls={story.audioUrls}
                     imageUrl={story.imageUrl}
                     imageDescription={story.imageDescription}
+                    title={story.title}
+                    description={story.description}
                     play={(e) => this.actionUpdate(e, story.key, play)}
                     pause={(e) => this.actionUpdate(e, story.key, pause)}
                     stop={(e) => this.actionUpdate(e, story.key, stop)}
+                    soften={(e) => this.actionUpdate(e, story.key, soften)}
+                    louden={(e) => this.actionUpdate(e, story.key, louden)}
                     downloadUrl={story.audioUrls[1]}
                     isPlaying={story.isPlaying}
-                    title={story.title}
-                    description={story.description}
+                    volume={story.volume}
                     />
                 </div>
               );
