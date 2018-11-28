@@ -1,3 +1,4 @@
+import '@babel/polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Switch, BrowserRouter, Route } from 'react-router-dom';
@@ -11,7 +12,6 @@ import Stories from './Stories';
 import About from './About';
 import Contact from './Contact';
 import { unregister } from './registerServiceWorker';
-import '@babel/polyfill';
 
 window.FontAwesomeConfig = {
   searchPseudoElements: true
