@@ -80,17 +80,17 @@ export function louden(storyKey, stories) {
 function AudioController(props) {
 	return (
 		<div className="audio-controller buttons is-centered">
-		  <a title={"Play " + props.title} aria-label={"Play " + props.title} className={"button-play button" + (props.isPlaying === false ? "" : " is-hidden")} tabIndex="0" onClick={(e) => props.play(e)} onKeyPress={(e) => props.play(e)}>
+		  <a title={"Play " + props.title} aria-label={"Play " + props.title} className={"button-play button" + (props.isPlaying === false ? "" : " is-hidden")} tabIndex="0" onClick={props.play} onKeyPress={props.play}>
 		    <span className="icon is-small">
 		      <i className="fa fa-play"></i>
 		    </span>
 		  </a>
-      <a title={"Pause " + props.title} aria-label={"Pause " + props.title} className={"button-pause button" + (props.isPlaying === true ? "" : " is-hidden")} tabIndex="0" onClick={(e) => props.pause(e)} onKeyPress={(e) => props.pause(e)}>
+      <a title={"Pause " + props.title} aria-label={"Pause " + props.title} className={"button-pause button" + (props.isPlaying === true ? "" : " is-hidden")} tabIndex="0" onClick={props.pause} onKeyPress={props.pause}>
         <span className="icon is-small">
           <i className="fa fa-pause"></i>
         </span>
       </a>
-      <a title={"Stop " + props.title} aria-label={"Stop " + props.title} className={"button-stop button" + (props.isPlaying === true ? "" : " is-hidden")} tabIndex="0" onClick={(e) => props.stop(e)} onKeyPress={(e) => props.stop(e)}>
+      <a title={"Stop " + props.title} aria-label={"Stop " + props.title} className={"button-stop button" + (props.isPlaying === true ? "" : " is-hidden")} tabIndex="0" onClick={props.stop} onKeyPress={props.stop}>
         <span className="icon is-small">
           <i className="fa fa-stop"></i>
         </span>
@@ -99,8 +99,8 @@ function AudioController(props) {
         aria-label="Decrease music volume" 
         className="button-soften button"
         tabIndex="0" 
-        onClick={(e) => props.soften(e)} 
-        onKeyPress={(e) => props.soften(e)}
+        onClick={props.soften} 
+        onKeyPress={props.soften}
         disabled={props.volume <= 0}>
         <span className="icon is-small">
           <i className="fa fa-volume-down"></i>
@@ -110,8 +110,8 @@ function AudioController(props) {
         aria-label="Increase music volume" 
         className="button-louden button"
         tabIndex="0" 
-        onClick={(e) => props.louden(e)} 
-        onKeyPress={(e) => props.louden(e)}
+        onClick={props.louden}
+        onKeyPress={props.louden}
         disabled={props.volume >= 1}>
         <span className="icon is-small">
           <i className="fa fa-volume-up"></i>

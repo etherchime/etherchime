@@ -11,11 +11,18 @@ import Home from './Home';
 import Stories from './Stories';
 import About from './About';
 import Contact from './Contact';
+import { Howler } from 'howler';
 import { unregister } from './registerServiceWorker';
 
 window.FontAwesomeConfig = {
   searchPseudoElements: true
 };
+
+// Disable Howler's attempt to unlock audio,
+// as it causes event-propagation issues with
+// anchor-interaction.
+Howler.mobileAutoEnable = false;
+
 ReactDOM.render(<App />, document.getElementById("appRoot"));
 ReactDOM.render(
   <BrowserRouter>
