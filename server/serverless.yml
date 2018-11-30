@@ -1,0 +1,21 @@
+service: etherchime-api
+plugins:
+  - serverless-webpack
+  - serverless-offline
+custom:
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules: true
+    packager: 'npm'
+  serverless-offline:
+    port: 4000
+provider:
+  name: aws
+  runtime: nodejs8.10
+functions:
+  app:
+    handler: index.handler
+    events:
+      - http: ANY /
+      - http: 'ANY {proxy+}'
+      - cors: true
