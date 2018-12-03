@@ -30,7 +30,8 @@ ReactDOM.render(
       <Route exact path="/" component={Home} />
       <Route path="/music/:category?" component={Stories} />
       <Route path="/about" component={About} />
-      <Route path="/contact" component = {Contact} />
+      <Route path="/contact" component={Contact} />
+      <Route component={Home} />
     </Switch>
   </BrowserRouter>,
   document.getElementById("mainRoot"));
