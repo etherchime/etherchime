@@ -36,25 +36,16 @@ class Stories extends Component {
     });
   }
 
-  formatStories(stories, isNew) {
+  formatStories(stories) {
     let storyRows = [];
     const columnsNo = 3;
     stories.forEach((story, index) => {
-      if (isNew === true) {
-        story.audio = new Howl({
-          src: [ story.audioUrls[0] ],
-          format: ['wav'],
-          autoplay: false,
-          loop: true,
-          volume: 0.8
-        });
-        story.isPlaying = false;
-        story.volume = 0.8;
-      }
-
       var count = index + 1;
       var remainderNo = mod(count, columnsNo);
-      var remainingNo = stories.length - index;
+      var remainingNo = stories.length - count;
+
+      // If can't fit more stories in row, push row.
+      // Else if can't fill beyond 1 more row, push remainder.
       if (remainderNo === 0) {
         var storyRow = stories.slice(count - columnsNo, count);
         storyRows.push(storyRow);
@@ -99,7 +90,20 @@ class Stories extends Component {
       document.title = storiesData[0].title + " - Royalty-Free Music - Etherchime";
     }
 
-    let storyRows = this.formatStories(storiesData, true);
+    // Initialize audio for each story.
+    storiesData.forEach((story) => {
+      story.audio = new Howl({
+        src: [ story.audioUrls[0] ],
+        format: ['wav'],
+        autoplay: false,
+        loop: true,
+        volume: 0.8
+      });
+      story.isPlaying = false;
+      story.volume = 0.8;
+    });
+
+    let storyRows = this.formatStories(storiesData);
 
     this.setState({
       storyRows: storyRows
@@ -121,7 +125,7 @@ class Stories extends Component {
     var updatedStories = action(storyKey, allStories);
 
     this.setState({
-      storyRows: this.formatStories(updatedStories, false)
+      storyRows: this.formatStories(updatedStories)
     });
   }
 
