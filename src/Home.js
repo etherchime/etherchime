@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Home.css';
+import { Link } from 'react-router-dom';
 import FeaturedStories from './FeaturedStories';
 import CategoriesData from './Categories.json';
 
@@ -38,7 +39,7 @@ class Home extends Component {
               </div>
               <div className="column is-two-thirds">
                 <div className="has-text-weight-normal is-size-4">
-                  <p><a href={"/music/" + category.key}>{category.tagline}</a></p>
+                  <p><Link to={"/music/" + category.key}>{category.tagline}</Link></p>
                   <ul>
                     {category.features.map((feature, index) => {
                       return <li key={category.key + "-feature-" + index} className="has-circled-bullet">{feature}</li>;
@@ -57,7 +58,7 @@ class Home extends Component {
             <h1 className="has-text-weight-normal is-size-4">
               Music for <a title="Learn about music for video games" aria-label="Learn about music for video games" href="#musicFor-games">video games</a> and <a title="Learn about music for video productions" aria-label="Learn about music for video productions" href="#musicFor-videos">video productions</a> - composed by Brandon Shewmake.
             </h1><br />
-            <p className="content is-size-4">Find free music for your project licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons BY 4.0</a>, or request original compositions by <a href="/contact">contacting me</a>.</p>
+            <p className="content is-size-4">Find free music for your project licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons BY 4.0</a>, or request original compositions by <Link to="/contact">contacting me</Link>.</p>
           </div>
           <div className="column is-7">
             <FeaturedStories />

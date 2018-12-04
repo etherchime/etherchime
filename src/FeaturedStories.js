@@ -6,6 +6,7 @@ import AudioController, { play, pause, stop, soften, louden } from './AudioContr
 import StoriesData from './StoriesData20181118.json';
 import { onEnter } from './utilities';
 import { Howl } from 'howler';
+import { Link } from 'react-router-dom';
 
 class FeaturedStories extends Component {
   constructor(props) {
@@ -121,7 +122,7 @@ class FeaturedStories extends Component {
     return (
       <div className="carousel carousel-animated carousel-animate-fade">
         <div className="carousel-item-title has-text-centered is-size-4 is-overlay-desktop">
-          <h2><a href={"/music?story=" + (currentStory && currentStory != null ? currentStory.key : "")}>{currentStory && currentStory != null ? currentStory.title : ""}</a></h2>
+          <h2><Link to={"/music?story=" + (currentStory && currentStory != null ? currentStory.key : "")}>{currentStory && currentStory != null ? currentStory.title : ""}</Link></h2>
         </div>
         <div className='carousel-container'>
           {carouselItems}
