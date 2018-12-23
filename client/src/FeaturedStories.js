@@ -3,7 +3,7 @@ import './FeaturedStories.css';
 import bulmaCarousel from 'bulma-carousel';
 import FeaturedStory from './FeaturedStory';
 import AudioController, { play, pause, stop, soften, louden } from './AudioController';
-import StoriesData from './StoriesData20181118.json';
+import StoriesData from './StoriesData20181223.json';
 import { onEnter } from './utilities';
 import { Howl } from 'howler';
 import { Link } from 'react-router-dom';

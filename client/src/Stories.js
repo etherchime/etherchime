@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { play, pause, stop, soften, louden } from './AudioController';
 import './Stories.css';
 import Story from './Story';
-import StoriesData from './StoriesData20181118.json';
+import StoriesData from './StoriesData20181223.json';
 import CategoriesData from './Categories.json';
 import { mod } from './utilities';
 import qs from 'qs';

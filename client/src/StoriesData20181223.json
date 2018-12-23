@@ -1,5 +1,18 @@
 [
   {
+    "key": "Reverie_of_Winter_Stars",
+    "releaseDate": "2018-12-23",
+    "audioUrls": [
+      "https://feeds.soundcloud.com/stream/549201513-etherchime-reverie-of-winter-stars.mp3", 
+      "https://www.mediafire.com/file/9yaxdn054fkkk6i/Reverie_of_Winter_Stars.wav/file"
+    ],
+    "imageUrl": "https://farm8.staticflickr.com/7839/32563572098_dcf992017d_b.jpg",
+    "imageDescription": "A frozen pond rests exposed against a rocky face, both buffeted by a winter storm.",
+    "title": "Reverie of Winter Stars",
+    "description": "The forest buffers a lone traveler against icy winds that weave among peaks; starlight radiates through snow-clouds and their windswept precipitation. En route to a high, frozen pond the traveler trades the forest's insulation for grand sights that warm the heart.",
+    "tags": ["featured", "winter", "games", "videos"]
+  }
+  ,{
     "key": "Early_Frost",
     "releaseDate": "2018-11-18",
     "audioUrls": [
