@@ -16,7 +16,7 @@ window.FontAwesomeConfig = {
 // Disable Howler's attempt to unlock audio,
 // as it causes event-propagation issues with
 // anchor-interaction.
-Howler.mobileAutoEnable = false;
+Howler.autoUnlock = false;
 
 ReactDOM.render(<App />, document.getElementById("appRoot"));
 
